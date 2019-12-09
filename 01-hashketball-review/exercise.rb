@@ -1,8 +1,10 @@
+require 'pry'
+
 # # EXERCISE:
 instructors = [
   { name: 'Ian', hometown: 'Suttons Bay,', excitement_level: 10 },
   { name: 'Mazen', hometown: 'Bahrain', excitement_level: 10 },
-  { name: 'Leizl', hometwon: '', excitement_level: 10 }
+  { name: 'Leizl', hometown: '', excitement_level: 10 }
 ]
 
 # # Define a method called get_names that takes an array of instructors
