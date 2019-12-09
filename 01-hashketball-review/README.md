@@ -13,7 +13,7 @@
 - Should I code along?
 - Falling asleep
 
-## SWBATs
+## Students Will Be Able To s
 - Define TDD (Test Driven Development)
 - Distinguish between data types in Ruby
 - Show how to look up documentation for data types in Ruby
@@ -57,10 +57,10 @@
 
 ## Enumerable Methods
 - What can we use each of these for? What will they return?
-  - `each`
-  - `map`
-  - `select`
-  - `find`
+  - `each` - loop through the array and let you run whatever ruby code inside a block - spork; returns the original array
+  - `map` - loop through an array and return a new array of tthe same size (same # of elements), 
+  - `select` - will return an ARRAY based on a true/false condition with the elements from the initial array (good filtering)
+  - `find` - return ONE thing (the first thing) from an array where the block for find returns true (filter to one element)
 
 ## Methods in Ruby
 - Variable scope

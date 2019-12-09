@@ -126,3 +126,47 @@ def game_hash
     }
   }
 end
+
+def all_players
+  game_hash[:away][:players] + game_hash[:home][:players]
+end
+
+def find_player_by_name(player_name)
+  all_players.find do |player_hash|
+    player_hash[:name] == player_name
+  end
+
+  # found_player = nil
+
+  # all_players.each do |player_hash|
+  #   if player_hash[:name] == player_name
+  #     found_player = player_hash
+  #   end
+  # end
+
+  # found_player
+end
+
+# num_points_scored knows the number of points scored by each player
+def num_points_scored(player_name)
+  # loop the the game_hash to look at the data
+  # get the players out of the hash
+  # players = game_hash[:away][:players] + game_hash[:home][:players]
+
+  # use the player_name argument to compare with the player name from the hash
+  # and get the matching player
+  # == player_name
+  
+  # return the points for one player
+  found_player = find_player_by_name(player_name)
+  found_player[:points]
+end
+
+def shoe_size(player_name)
+# loop the the game_hash to look at the data
+  # get the players out of the hash
+  found_player = find_player_by_name(player_name)
+
+  # return the points for one player
+  found_player[:shoe]
+end
