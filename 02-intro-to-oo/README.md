@@ -33,18 +33,19 @@ Intro to Object Orientation
 
 ## Deliverables
 
-Here is a naive implementation of a bank account in Ruby using only a hash which stores key-value pairs.
+Here is a naive implementation of a clown class in Ruby using only a hash which stores key-value pairs.
 
 ```rb
-bank_account = { account_holder: "Ian", balance: 1000 }
+clown = { name: "Krusty", age: 55, skills: "Drinking", fears: "Failure" }
 ```
 
-Write an implementation of a bank account that meets the following requirements:
+Write an implementation of a clown class that meets the following requirements:
 
-- can get the balance of the account
-- can get the account holder's name
-- can deposit money into the account
-- can withdraw money from the account
-- can show me all the bank accounts that have been created
+- [x] can get the name, age, skills and fear for a clown
+- [x] can say hello and print out their details to the screen
+"Hello my name is Krusty. I'm 55 years old. I'm good at drinking and terrified of failure."
+- [ ] can juggle -> puts some bowling pin emojis to the screen
+- [ ] overcome fears
+- [ ] can show me all the clowns that have been created
 *bonus*
-- can find a bank account based on the account holder's name
+- [ ] can find a clown based on their name
