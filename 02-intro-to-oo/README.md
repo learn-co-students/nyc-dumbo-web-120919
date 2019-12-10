@@ -44,8 +44,8 @@ Write an implementation of a clown class that meets the following requirements:
 - [x] can get the name, age, skills and fear for a clown
 - [x] can say hello and print out their details to the screen
 "Hello my name is Krusty. I'm 55 years old. I'm good at drinking and terrified of failure."
-- [ ] can juggle -> puts some bowling pin emojis to the screen
-- [ ] overcome fears
-- [ ] can show me all the clowns that have been created
+- [x] can juggle -> puts some bowling pin emojis to the screen
+- [x] overcome fears
+- [x] can show me all the clowns that have been created
 *bonus*
-- [ ] can find a clown based on their name
+- [x] can find a clown based on their name

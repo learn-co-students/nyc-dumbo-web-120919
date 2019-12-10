@@ -23,6 +23,14 @@ class Clown
     @fears.downcase
   end
 
+  def juggle
+    puts "🎳" * 5
+  end
+
+  def overcome_fears
+    @fears = "NOTHING"
+  end
+
   def self.all
     @@all
   end
@@ -32,18 +40,7 @@ class Clown
       binding.pry
       clown_instance.name == name
     end
-    # find - we just want one instance!
   end
-
-  # getter
-  # def name
-  #   @name
-  # end
-
-  # setter
-  # def name=(new_name)
-  #   @name = new_name
-  # end
 
 end # end of clown class
 
