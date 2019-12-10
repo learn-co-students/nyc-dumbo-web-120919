@@ -36,7 +36,7 @@ Intro to Object Orientation
 Here is a naive implementation of a bank account in Ruby using only a hash which stores key-value pairs.
 
 ```rb
-bank_account = { account_holder: "Ian", balance: 100 }
+bank_account = { account_holder: "Ian", balance: 1000 }
 ```
 
 Write an implementation of a bank account that meets the following requirements:
