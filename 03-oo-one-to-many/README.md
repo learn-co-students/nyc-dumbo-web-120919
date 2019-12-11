@@ -34,9 +34,15 @@ One to Many Relationships
 
 What do the following mean in plain English? What do they mean in programming?
 
-* Model
-* Domain
+* Model - structure of something, blueprint, a representation of something -> Classes
+* Domain - something that encompasses one aspect: an area of a larger idea, google.com - searches, twitter.com - social media
 * Domain modeling
+  YouTube - videos + comments
+    - engagements, video content connects to comments, comments are responses to videos
+    - video has many comments, comment belongs to a video
+  Twitter - users + tweets
+    - user has many tweets, tweet belongs to a user
+
 * Relationships
   * One to many relationship
   * Many to many relationship
@@ -60,13 +66,13 @@ Create a User class. The class should have these methods:
   - [ ] `User#post_tweet` takes a message, creates a new tweet, and adds it to the user's tweet collection.
   - [ ] `User#tweets` returns an array of Tweet instances.
   - [x] `User.all` returns all the User instances in our app.
-  - [ ] `User.print_tweets` that prints the message of each tweet to the screen in a pretty way.
+  - [ ] *bonus* `User.print_tweets` that prints the message of each tweet to the screen in a pretty way.
   - [ ] *bonus* `User.most_tweets` returns the instance of the user who has made the most tweets.
 
 Create a Tweet class. The class should have these methods:
-  - [ ] `Tweet#initialize` takes a message and a user and creates a Tweet instance.
-  - [ ] `Tweet#message` returns a string. _Should not_ be able to change after the tweet is created.
-  - [ ] `Tweet#user` returns an instance of the user class.
+  - [x] `Tweet#initialize` takes a message and a user and creates a Tweet instance.
+  - [x] `Tweet#message` returns a string. _Should not_ be able to change after the tweet is created.
+  - [x] `Tweet#user` returns an instance of the user class. _Should not_ be able to change after the tweet is created.
   - [ ] `Tweet.all` returns all the Tweet instances in our app.
   - [ ] `Tweet#username` returns the username of the tweet's user.
 
