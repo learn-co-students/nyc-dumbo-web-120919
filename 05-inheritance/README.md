@@ -9,6 +9,9 @@
 - [ ] Understand how to read test errors
 
 ## Key Concepts
+- makes it easier to bridge classes - sharing functionality between classes
+- makes it more managable, easier to read
+- makes things more tangible - see OO patterns in the real world, makes Objects less abstract
 
 #### RSpec 
 
