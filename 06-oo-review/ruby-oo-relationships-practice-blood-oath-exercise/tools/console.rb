@@ -1,0 +1,28 @@
+require_relative '../config/environment.rb'
+
+def reload
+  load 'config/environment.rb'
+end
+# Insert code here to run before hitting the binding.pry
+# This is a convenient place to define variables and/or set up new object instances,
+# so they will be available to test and play around with in your console
+
+# Cult.new(name, location, founding_year, slogan)
+c1 = Cult.new("Ian", "Mod 1", 2019, "OOPs")
+c2 = Cult.new("Eric", "Mod 3", 2019, "razzamataz")
+c3 = Cult.new("Graham", "Mod 4", 2019, "graham is nice")
+
+# Follower.new(name, age, life_motto)
+f1 = Follower.new("Gracie", 100, "magic")
+f2 = Follower.new("Mazen", 101, "octopus")
+f3 = Follower.new("Rei", 102, "small stuff matters")
+
+# BloodOath.new(initiation_date, cult, follower)
+b1 = BloodOath.new("today", c1, f1)
+b2 = BloodOath.new("today", c1, f2)
+b3 = BloodOath.new("today", c2, f3)
+b4 = BloodOath.new("today", c3, f2)
+
+binding.pry
+
+puts "Mwahahaha!" # just in case pry is buggy and exits
