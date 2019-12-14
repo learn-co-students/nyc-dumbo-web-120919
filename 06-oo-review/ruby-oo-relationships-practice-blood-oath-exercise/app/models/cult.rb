@@ -1,19 +1,28 @@
 class Cult
-  attr_reader :name, :location, :founding_year, :slogan
+  attr_reader :name, :location, :founding_year, :slogan, :minimum_age
   
   @@all = []
 
-  def initialize(name, location, founding_year, slogan)
+  def initialize(name, location, founding_year, slogan, minimum_age)
     @name = name
     @location = location
     @founding_year = founding_year
     @slogan = slogan
+    @minimum_age = minimum_age
 
     @@all << self
   end
 
+  # * takes in an argument of a `Follower` instance and adds them to this cult's list of followers
+  # * NOW this is changed such that if the given `Follower` instance is not of age:
+  # * do not let them join the cult
+  # * print out a friendly message informing them that they are too young
   def recruit_follower(follower)
-    BloodOath.new("2019-12-13", self, follower)
+    if follower.age >= self.minimum_age
+      BloodOath.new("2019-12-13", self, follower)
+    else
+      puts "You're too young for this cult!"
+    end
   end
 
   def cult_population

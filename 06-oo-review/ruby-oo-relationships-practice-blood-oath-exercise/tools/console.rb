@@ -8,10 +8,10 @@ end
 # so they will be available to test and play around with in your console
 
 # Cult.new(name, location, founding_year, slogan)
-c1 = Cult.new("Ian", "Mod 1", 2019, "OOPs")
-c2 = Cult.new("Eric", "Mod 3", 2019, "razzamataz")
-c3 = Cult.new("Graham", "Mod 4", 2019, "graham is nice")
-c4 = Cult.new("Leizl", "Mod 4", 2019, "vacay")
+c1 = Cult.new("Ian", "Mod 1", 2019, "OOPs", 99)
+c2 = Cult.new("Eric", "Mod 3", 2019, "razzamataz", 100)
+c3 = Cult.new("Graham", "Mod 4", 2019, "graham is nice", 101)
+c4 = Cult.new("Leizl", "Mod 4", 2019, "vacay", 102)
 
 # Follower.new(name, age, life_motto)
 f1 = Follower.new("Gracie", 100, "magic")
