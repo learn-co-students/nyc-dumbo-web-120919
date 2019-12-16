@@ -6,10 +6,10 @@
 - Testing code using `binding.pry` - debugging inside of methods - also show using `puts`/`p` to test data
 
 # Common Issues
-- initializing a Book with a string for the author name
-  - `Book.new("Title", "Author", 100)`
-- creating an array of books as an instance variable in the Author class
-  - `@books = []`
+- initializing a Book with a string for the author name -> doesn't meet the requirementst for the domain (a book _belongs to_ an author instance)
+  - `Book.new("Title", "Author", 100)` -> not gonna work :(
+- creating an array of books as an instance variable in the Author class -> Violates single source of truth
+  - `@books = []` -> this means we have to keep track of multiple arrays of books, not gonna work :(
 - `map` vs `select`
   - Using map to filter a list -> not gonna work :(
   - Using select to transform a list -> not gonna work :(
