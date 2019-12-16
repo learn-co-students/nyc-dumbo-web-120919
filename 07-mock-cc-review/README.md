@@ -1,3 +1,19 @@
+# To Review
+- has many/belongs to
+- passing instances of classes as arguments to methods
+- Single Source of Truth
+- Deliverables: how read deliverables, understand what kind of data they should return
+- Testing code using `binding.pry` - debugging inside of methods - also show using `puts`/`p` to test data
+
+# Common Issues
+- initializing a Book with a string for the author name
+  - `Book.new("Title", "Author", 100)`
+- creating an array of books as an instance variable in the Author class
+  - `@books = []`
+- `map` vs `select`
+  - Using map to filter a list -> not gonna work :(
+  - Using select to transform a list -> not gonna work :(
+
 # Mini Mock Code Challenge
 
 The topics covered in each module build upon the topics covered in the last.  For example, in Module 2 you will learn about the Ruby on Rails framework. To build an application in Rails one should have a solid foundation in Ruby.  In Module 3, covering JavaScript, you will continue to use Rails as a backend and build upon the foundations of how web applications work covered in Module 2. Learning React in Module 4 will require understanding of both functional and object oriented JavaScript.
@@ -40,6 +56,9 @@ You will be building out an application that can track Authors and Books. For ou
 
 We've provided you with a console that you can use to test your code. To enter a console session, run `ruby console.rb`. You'll be able to test out the methods that you write here.
 
+Author -< Book
+
+
 ## Deliverables
 
 ### `Book`
@@ -48,7 +67,7 @@ Build the following methods on the Book class
 - `Book.all`
 should return all of the books
 - `Book#author`
-should return the author instance who wrote this book
+should return the `author instance` who wrote this book
 - `Book#title`
 should return the title of the book
 - `Book#word_count`
@@ -59,6 +78,7 @@ Build the following methods on the Author class
 
 - `Author.all`
 should return all of the authors
+- `Author#name` -> return the author's name
 - `Author#books`
 should return all of the books an author has written
 - `Author#write_book`
