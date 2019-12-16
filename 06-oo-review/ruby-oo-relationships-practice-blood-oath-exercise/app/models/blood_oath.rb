@@ -11,8 +11,17 @@ class BloodOath
     @@all << self
   end
 
+  # class methods
+
   def self.all
     @@all
   end
-end
 
+  # returns the `Follower` instance for the follower that made the very first blood oath
+  def self.first_oath
+    first_oath = self.all.min_by do |blood_oath|
+      blood_oath.initiation_date
+    end
+    first_oath.follower
+  end
+end
