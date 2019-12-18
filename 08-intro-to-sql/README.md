@@ -12,8 +12,8 @@ Intro to SQL
 * [ ] Perform CRUD actions across related tables
 
 ## Outline
-* 15 mins: discussion of databases and SQL
-* 30 mins: look at a SQL database and write some SQL
+* 25 mins: discussion of databases and SQL
+* 20 mins: look at a SQL database and write some SQL
 
 ## Key Questions
 * What can I do with data?
@@ -23,6 +23,8 @@ Intro to SQL
 * What is SQL?
 * What is CRUD?
 * How does an app like Instagram use CRUD?
+* (Pair) How can we model the following domain using SQL tables?
+  Game >- Review -< Player
 
 ## Set Up 
 

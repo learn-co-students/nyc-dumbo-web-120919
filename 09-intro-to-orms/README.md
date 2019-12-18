@@ -9,7 +9,7 @@ Intro to ORMs
 * [ ] Perform persistent CRUD actions on a model
 * [ ] Distinguish between ORM and SQL
 * [ ] Demonstrate that ORMs are the pattern connecting scripting languages and databases
-* [ ] Explain to a peer all the things that happen when we call `Tweet.all` (your answer should include when SQL is fired & when Ruby objects are created)
+* [ ] Explain to a peer all the things that happen when we call `Game.all` (your answer should include when SQL is fired & when Ruby objects are created)
 * [ ] Understand how to instantiate objects using Mass Assignment
 
 ## Outline
