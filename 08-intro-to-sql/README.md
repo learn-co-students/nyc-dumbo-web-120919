@@ -28,7 +28,7 @@ Intro to SQL
 
 1. Install the SQLite Browser if you haven't already [here](http://sqlitebrowser.org/)
 2. Open the SQLite Browser and click 'File -> Open DataBase'
-3. Choose the `game.sqlite` file from this repo. 
+3. Choose the `game-reviews.db` file from this repo. 
 4. Click the tab that says 'Execute SQL'. Type SQL queries in the box above. Press the play button. See the results of that query in the box below
 
 ## Challenges
@@ -43,4 +43,4 @@ Intro to SQL
 
   3a. Write the SQL to show the game title, the review rating, and the player's name
 
-4. Write the SQL to add a review to a game for a player
+4. Write the SQL to create a review
