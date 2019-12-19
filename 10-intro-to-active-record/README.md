@@ -34,7 +34,34 @@ end
 
 ### ActiveRecord
 
+Game -< Review >- Player
+
 * What are the steps for setting up ActiveRecord on a model?
+
+0. Setup the environment
+
+1. Create a migration
+  - a set of instructions in Ruby that set up our database tables
+  - `rake db:create_migration NAME=create_games`
+
+2. Write migration code
+  - tell activerecord what this migration is for
+  ```rb
+    create_table :games do |t|
+      t.string :title
+      t.string :genre
+      t.integer :price
+ 
+      t.timestamps
+      # created_at, updated_at
+    end
+  ```
+
+3. Run the migrations
+  - `rake db:migrate`
+  3.5 - check your migration
+
+4. Create the model and connect to activerecord
 
 * How can we do CRUD actions using ActiveRecord?
 
