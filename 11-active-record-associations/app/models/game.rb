@@ -1,5 +1,24 @@
 class Game < ActiveRecord::Base
 
+  has_many :reviews
+  has_many :players, through: :reviews
+
+  # def reviews
+  #   # 1. For a species, find all the colonies
+  #   # access the single source of truth for the colonies
+  #   # find the the colonies that are belong to this alien species
+  #   Review.all.select do |review_instance|
+  #     review_instance.game_id == self.id
+  #   end
+  # end
+
+  # def players
+  #   # 2. For those colonies, get the planet's info
+  #   self.reviews.map do |review|
+  #     review.player
+  #   end
+  # end
+
   # CRUD
   # Create
   # Game.new - creates a new Ruby instance
