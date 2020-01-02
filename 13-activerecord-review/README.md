@@ -10,6 +10,21 @@ For our purposes, a `Magazine` has many `Subscription`s, a `Reader` has many `Su
 
 **Note**: You should draw your domain on paper or on a whiteboard _before you start coding_. Remember to identify a single source of truth for your data.
 
+## Review
+- creating a migration
+  - following conventions for numbering migrations
+- rolling back a migration
+  - some gotchas, places where you'd see bugs
+- join model: 
+  - using find_by with ids
+  - working with associations (has many, belongs to)
+- iterating through a collection of items coming from the database
+  - map/each
+- using `rake console`
+  - when you have to exit/reload things
+  - press `q` to escape
+- how to view sql data as a table
+
 ## Topics
 
 - Active Record Migrations
@@ -61,6 +76,12 @@ Remember: Active Record give your classes access to a lot of built-in methods! K
 
 Before working on the rest of the deliverables, you will need to create a migration for the `subscriptions` table. 
 
+subscription
+- string for the reader instance
+- string for the magazine instance
+- integer for the price
+- timestamps (nice to have)
+
 - A `Subscription` belongs to a `Magazine`, and a `Subscription` also belongs to an `Reader`. In your migration, create any columns your `subscriptions` table will need to establish these relationships.
 - The `subscriptions` table should also have a `price` column that stores an integer.
 
@@ -90,6 +111,8 @@ After creating your migration, use the `seeds.rb` file to create instances of yo
   - should return a collection of all `Subscription` instances for this reader
 - `Reader#magazines`
   - should return a collection of all `Magazine` instances that this reader is subscribed to
+
+**TEST EVERYTHING HERE**
 
 ### Aggregate and Association Methods
 
