@@ -6,8 +6,3 @@ class Magazine < ActiveRecord::Base
   # finding the subscriptions for self
   # end
 end
-
-# - `Magazine#subscriptions`
-#   - returns a collection of all `Subscription` instances for this magazine
-# - `Magazine#readers`
-#   - returns a collection of all `Reader` instances who are subscribed to this magazine
