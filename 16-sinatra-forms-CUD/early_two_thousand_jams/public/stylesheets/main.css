@@ -1,0 +1,129 @@
+@media screen {
+  /* --- Reset Styles --- */
+  * {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+
+  /* --- Welcome Page Styles --- */
+  body {
+    background-color: lightblue;
+    color: #333;
+    font-family: Sans-Serif;
+    line-height: 18px;
+  }
+
+  .wrapper {
+    background: #fff;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    margin: 0px auto;
+    max-width: 960px;
+    padding: 2.25%; 
+    width: 85%;
+  }
+
+  h1 {
+    font-size: 36px;
+    line-height: 54px;
+  }
+
+  h2 {
+    border-bottom: 2px solid #ccc;
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 16px;
+  }
+
+  h3 {
+    font-size: 18px;
+    line-height: 36px;
+  }
+
+  p {
+    margin-bottom: 18px;
+  }
+
+  .main {
+    overflow: hidden;
+  }
+
+  .content {
+    float: left;
+    width: 60%;
+  }
+
+  .sidebar {
+    background: #eee;
+    border: 1px solid #ccc;
+    float: right;
+    padding: 2.08333333333%; 
+    width: 30%; 
+  }
+
+  .sidebar ul {
+    font-size: 14px;
+  }
+
+  .branding {
+    clear: both;
+  }
+
+  footer.branding {
+    border-top: 2px solid #ccc;
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+
+  /* -------- quick added Song styles ------------- */
+
+  .index-img {
+    max-width: 150px;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  .song-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-around;
+    justify-content: center;
+  }
+  
+  .song {
+    max-width: 200px;
+    border-radius: 25px;
+    padding: 20px;
+    margin: 3px;
+    background-color: lightgrey;
+  }
+  
+  .nav {
+    background: #fff;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    margin: 0px auto;
+    margin-bottom: 10px;
+    max-width: 960px;
+    padding: 2.25%; 
+    width: 85%;
+    
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 20px;
+  }
+  
+  .logo {
+    max-height: 75px;
+  }
+}
