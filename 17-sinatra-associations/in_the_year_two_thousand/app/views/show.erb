@@ -1,0 +1,14 @@
+  
+<a href="/songs/<%= @song.id %>/edit"> EDIT <%= @song.title%></a>
+
+<hr>
+
+<h3><%= @song.title %></h3>
+<marquee><img class='show-img' src="<%= @song.img_url %>" alt="<%=  @song.title%>"></marquee>
+
+<hr>
+
+<form action="/songs/<%= @song.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete <%= @song.title %>">
+</form>
