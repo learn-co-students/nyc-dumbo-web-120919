@@ -1,8 +1,8 @@
 # SWBAT
 * Demonstrate how REST is used with CRUD
-  - C-reate  
+  - C-reate  ✅
   - R-ead ✅
-  - U-pdate
+  - U-pdate ✅
   - D-elete
   - Add better navigation
 
@@ -21,7 +21,3 @@
 * Updating
 * Deleting
 
-
-
-## If we have time
-* Build a custom route
