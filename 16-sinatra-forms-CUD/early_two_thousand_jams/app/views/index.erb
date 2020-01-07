@@ -3,7 +3,7 @@
 <div class="song-container">
   <% @songs.each do |song| %>
     <div class='song'>
-      <h3> <%= song.title %></></h3>
+      <a href="songs/<%= song.id %>"><h3> <%= song.title %></> </h3> </a>
       <img src="<%= song.img_url %>" alt=<%= song.title %>>
       <h6>Artist: <%= song.artist %></h6>
       <h6>Genre: <%= song.genre %></h6>

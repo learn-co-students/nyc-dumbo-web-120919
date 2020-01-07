@@ -46,5 +46,12 @@ class ApplicationController < Sinatra::Base
     redirect to "/songs/#{song.id}"
   end
 
+  delete '/songs/:id' do
+    song = Song.find(params[:id])
+    song.destroy 
 
+    redirect to "/songs"
+  end
+
+  
 end
