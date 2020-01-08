@@ -3,8 +3,15 @@
 
 <hr>
 
-<h3><%= @song.title %></h3>
+<h3>Title: <%= @song.title %></h3>
 <marquee><img class='show-img' src="<%= @song.img_url %>" alt="<%=  @song.title%>"></marquee>
+
+<h3>These are all my weirdos: </h3>
+<ul>
+  <% @song.stans.each do |stan| %>
+    <li><%= stan.name %></li>
+  <% end %> 
+</ul>
 
 <hr>
 

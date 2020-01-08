@@ -1,0 +1,17 @@
+<%# BUTTON TO CREAT STAN %>
+<form action="/stans/new" method="POST">
+  <input type="hidden" name="_method" value="GET">
+  <input type="submit" value="Creat New Super Fan">
+</form>
+
+
+<%# ITERATE AND DISPLAY STANS %>
+<div class="song-container">
+  <% @stans.each do |stan| %>
+    <div class='song'>
+      <h3> <%= stan.name %></> </h3>
+      <img class="index-img" src="<%= stan.img_url %>" alt=<%= stan.name %>>
+      <h5>I Freakin Love <a href="/songs/<%= stan.song.id %>"><%= stan.song.title %></a></h5>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,13 @@
+<form action="/stans" method="POST">
+  <input type="text" name="name" placeholder="Name">
+  <input type="text" name="img_url" placeholder="Image URL">
+
+
+  <select name="song_id">
+    <% @songs.each do |song| %>
+      <option value=<%= song.id %>><%= song.title %></option>
+    <% end %>
+  </select>
+
+  <input type="submit" value="Create Stan">
+</form>
