@@ -1,6 +1,3 @@
-<h1>Movie Index</h1>
-
-
 <div class="index-container">
   <% @movies.each do |movie| %>
     <div class="index-tile">
@@ -13,6 +10,7 @@
       <h6>API Vote Count: <%= movie.vote_count %></h6>
       <h6>API Average Vote: <%= movie.vote_average %></h6>
       
+      <%= button_to "DELETE THIS THING", movie_path(movie), method: :delete %>
     </div>
   <% end %>
 </div>

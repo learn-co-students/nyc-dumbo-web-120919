@@ -1,25 +1,4 @@
 <h1>CREATE NEW MOVIE</h1>
 
-<%# <form action="/movies" method="POST">
-  <input type="text" name="title">
-  <input type="text" name="director">
-  <input type="text" name="genre">
-  <input type="number" name="release_year">
-  <input type="submit" value="CREATE MOVIE!!!">
-</form> %>
+<%= render "form" %>
 
-<%= form_for @movie do |f| %>
-  <%= f.label :title%>
-  <%= f.text_field :title %>
-
-  <%= f.label :overview%>
-  <%= f.text_field :overview %>
-
-  <%= f.label :release_year%>
-  <%= f.number_field :release_year %>
-  
-  <%= f.text_field :imag_url %>
-  <%= f.label :imag_url %>
-
-  <%= f.submit  %>
-<% end %>

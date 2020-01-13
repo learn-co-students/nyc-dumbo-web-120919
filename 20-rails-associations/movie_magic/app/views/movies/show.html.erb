@@ -7,5 +7,20 @@
   <h6>Vote Count: <%= @movie.vote_count %></h6>
   <h6>Vote Average: <%= @movie.vote_average %></h6>
 
-  <%= link_to "MOViES HOME", movies_path %>
+  <span><%= link_to "MOViES HOME", movies_path %></span>
+
+  <h2>REVIEWS</h2>
+
+  <hr>
+  <% @movie.reviews.each do |rev| %>
+    <div>
+      <h5>User: <%= rev.user.name %></h5>
+      <h5>Rating: <%= rev.rating %></h5>
+      <h5>Content: <%= rev.content %></h5>
+    </div>
+    <hr>
+  <% end %>
+
+  <%= button_to "Delete #{@movie.title}", movie_path(@movie), method: :delete %>
+
 </div>

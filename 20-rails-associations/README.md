@@ -11,7 +11,8 @@ Rails Associations
 - Handle deleting an instance of a model that has other records associated using `dependent: :destroy`
 
 ## Outline
-- [ ] Finish CRUD (delete)
+- [x] Finish CRUD (delete)
+- [x] Clean Up Controller && Views
 - [ ] Add an additional model to our domain
   - [ ] Create relationship using ActiveRecord
   - [ ] Use information from the association in our views
