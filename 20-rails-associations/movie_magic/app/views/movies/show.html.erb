@@ -1,0 +1,11 @@
+
+<div class="show-body">
+  <h2><%= @movie.title %></h2>
+  <p><%= @movie.overview %></p>
+  <marquee scrolldelay='60'><img class="show-img" src="<%= @movie.image_url %>" alt="<%= @movie.title%>"></marquee> 
+
+  <h6>Vote Count: <%= @movie.vote_count %></h6>
+  <h6>Vote Average: <%= @movie.vote_average %></h6>
+
+  <%= link_to "MOViES HOME", movies_path %>
+</div>
