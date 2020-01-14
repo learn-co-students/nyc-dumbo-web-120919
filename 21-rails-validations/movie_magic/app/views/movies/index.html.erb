@@ -1,0 +1,16 @@
+<div class="index-container">
+  <% @movies.each do |movie| %>
+    <div class="index-tile">
+      <h3><%= link_to movie.title, movie_path(movie.id)  %></h3>
+      <h5>Release Year: <%= movie.release_year %></h5>
+      <p><strong>Overview:</strong> <%= movie.overview[0..25] %>...</p>
+      <img class="index-img" src="<%= movie.image_url %>" alt="<%= movie.title%>">
+
+      <hr>
+      <h6>API Vote Count: <%= movie.vote_count %></h6>
+      <h6>API Average Vote: <%= movie.vote_average %></h6>
+      
+      <%= button_to "DELETE THIS THING", movie_path(movie), method: :delete %>
+    </div>
+  <% end %>
+</div>

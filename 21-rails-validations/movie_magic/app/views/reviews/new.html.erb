@@ -1,0 +1,22 @@
+<%= form_for @review do |f| %>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+  <br>
+  <%= f.label :rating %>
+  <%= f.number_field :rating %>
+  <br>
+  <%= f.label :user_id %>
+  <%= f.collection_select :user_id, @users, :id, :name%>
+  <br>
+  <%= f.label :movie_id %>
+  <%= f.collection_select :movie_id, @movies, :id, :title %>
+  <br>
+  <%= f.submit %>
+<% end %>
+
+
+
+<%# <select name="user_id" id="">
+  User.all.each 
+  <option value="id">show user</option>
+</select> %>
