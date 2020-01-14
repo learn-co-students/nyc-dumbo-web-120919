@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
     @movies = Movie.all
     @users = User.all
 
-    render :new
+    # render :new
   end 
 
   def create 

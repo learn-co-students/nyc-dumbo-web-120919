@@ -3,21 +3,17 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
-    render :index
+    # render :index
   end
 
   
   def show 
     # @movie = Movie.find(params[:id])
-   
     # render :show
   end 
 
   def new 
     @movie = Movie.new
-
-    @users = User.all
-    @reviews = @movie.reviews
     # render :new
   end 
 
@@ -35,8 +31,7 @@ class MoviesController < ApplicationController
 
   def edit 
     # @movie = Movie.find(params[:id])
-
-    render :edit
+    # render :edit
   end 
 
   def update 
@@ -46,9 +41,8 @@ class MoviesController < ApplicationController
     else 
       flash[:errors] = @movie.errors.full_messages
       
-      redirect_to edit_movie_path #"/movies/new"
+      redirect_to edit_movie_path(@movie.id) #"/movies/:id/edit"
     end 
-    # redirect_to movie
   end 
 
   def destroy 
