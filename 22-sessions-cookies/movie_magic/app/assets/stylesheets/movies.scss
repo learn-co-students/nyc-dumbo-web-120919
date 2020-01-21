@@ -1,0 +1,85 @@
+// Place all the styles related to the Movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background-image: url("http://getwallpapers.com/wallpaper/full/6/a/2/1036980-cool-theater-backgrounds-2550x1800-for-android-tablet.jpg");
+
+}
+
+.index-img {
+  max-width: 150px;
+}
+
+.show-img {
+  max-width: 25%;
+}
+
+img {
+  max-width: 100%;
+}
+
+.index-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-around;
+  justify-content: center;
+  margin-top: 20px;
+  // max-height: 1000px;
+  overflow: hidden;
+  overflow: auto;
+  // padding-top: 250px;
+  // background-color: red;
+}
+
+.index-tile {
+  max-width: 200px;
+  border-radius: 25px;
+  padding: 20px;
+  margin: 3px;
+  // background-color: lightgrey;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.nav {
+  background: #fff;
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+  margin: 0px auto;
+  margin-bottom: 10px;
+  max-width: 960px;
+  padding: 2.25%; 
+  width: 85%;
+  
+  font-family: molle;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 20px;
+}
+
+.logo {
+  max-height: 200px;
+}
+
+
+h6  {
+  margin: 0px;
+  padding: 0px;
+}
+
+
+.show-body, form {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  margin: 0px auto;
+  margin-bottom: 10px;
+  max-width: 960px;
+  padding: 2.25%; 
+  width: 85%;
+
+  // font-family: molle;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 20px;
+}

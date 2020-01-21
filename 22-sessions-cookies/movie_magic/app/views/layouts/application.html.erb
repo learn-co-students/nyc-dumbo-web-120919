@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MovieMagic</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link href="https://fonts.googleapis.com/css?family=Molle:400i&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+      <div class='nav'>
+        <%# <span><h1>Movie Magic</h1></span> %>
+        <img class='logo' src="http://jeremythemagician.com/wp-content/uploads/2013/08/movie-magic-logo-jpg_w800_h600_fit.jpg" alt="mm">
+      </div>
+    <%= yield %>
+  </body>
+</html>
