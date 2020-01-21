@@ -1,0 +1,27 @@
+
+<% if flash[:some_errors] %>
+  <% flash[:some_errors].each do |message| %>
+    <p style="color: white;"> <%= message %> </p>
+  <% end%>
+<% end%>
+
+
+<%= form_for @movie do |f| %>
+  <%= f.label :title%>
+  <%= f.text_field :title %>
+  <br>
+  <br>
+  <%= f.label :overview%>
+  <%= f.text_field :overview %>
+  <br>
+  <br>
+  <%= f.label :release_year%>
+  <%= f.number_field :release_year %>
+  <br>
+  <br>
+  <%= f.label :image_url %>
+  <%= f.text_field :image_url %>
+  <br>
+  <br>
+  <%= f.submit  %>
+<% end %>

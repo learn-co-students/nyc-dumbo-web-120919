@@ -1,0 +1,39 @@
+<% if session[:cookie_counter]  <= 0 %>
+
+  <iframe width="1004" height="753" src="https://www.youtube.com/embed/CK2Btk6Ybm0?list=PLTT8GoH4BtdLaWW7hZS77IfFYwkWK-1Wc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  
+  <%=button_to "I promise I watched this Ad", "/sessions/reset", method: :patch %>
+
+<% else %>
+
+  <h1>You have <%= session[:cookie_counter] - 1 %> views until ad</h1>
+  <div class="show-body">
+    <h2><%= @movie.title %></h2>
+    <p><%= @movie.overview %></p>
+
+
+    <marquee scrolldelay='60'><img class="show-img" src="<%= @movie.image_url %>" alt="<%= @movie.title%>"></marquee> 
+
+    <h6>Vote Count: <%= @movie.vote_count %></h6>
+    <h6>Vote Average: <%= @movie.vote_average %></h6>
+
+    <span><%= link_to "MOViES HOME", movies_path %></span>
+
+    <h2>REVIEWS</h2>
+
+    <hr>
+    <% @movie.reviews.each do |rev| %>
+      <div>
+        <h5>User: <%= rev.user.name %></h5>
+        <h5>Rating: <%= rev.rating %></h5>
+        <h5>Content: <%= rev.content %></h5>
+      </div>
+      <hr>
+    <% end %>
+
+    <%= button_to "Delete #{@movie.title}", movie_path(@movie), method: :delete %>
+  </div>
+
+<% end %>
+
+
