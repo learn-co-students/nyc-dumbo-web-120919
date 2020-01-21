@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :reviews, only: [:new, :create]
   resources :users, only: [:index, :show]
   resources :movies 
+
+  patch "sessions/reset", to: "sessions#reset_session"
   #resources :movies, only: [:index, :show, :new, :create, :edit, :update]
   # resources :movies, except: [:delete]
 

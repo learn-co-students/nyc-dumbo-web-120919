@@ -10,6 +10,17 @@ class MoviesController < ApplicationController
   def show 
     # @movie = Movie.find(params[:id])
     # render :show
+
+    # if cookies[:cookie_counter]
+    #   cookies[:cookie_counter] -= 1
+    # else 
+    #   cookies[:cookie_counter] = 3
+    # end 
+  
+    session[:cookie_counter] ||= 3
+
+    session[:cookie_counter] -= 1
+
   end 
 
   def new 
