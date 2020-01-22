@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     user = User.create(user_params)
 
     if user.valid? 
-      #What else do I need to do here?
+      session[:user_id] = user.id
       redirect_to user_path(user.id)
     else 
       flash[:errors] = user.errors.full_messages
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   private 
 
   def user_params 
-    params.require(:user).permit(:name, :img_url)
+    params.require(:user).permit(:name, :img_url, :password)
   end 
 
 end

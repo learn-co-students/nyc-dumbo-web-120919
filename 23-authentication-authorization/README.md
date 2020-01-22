@@ -7,7 +7,7 @@ Rails Authentication & Authorization
 - Understand, theoretically, how authentication and authorization work
   - Understand the _difference_ between authentication and authorization and how they fit under the umbrella topic _auth_
 - Discuss different encryption and hashing schemes, and `bcrypt` specifically
-  - Do we want to ever store plaintext user passwords?
+  - Do we want to ever store plaintext user passwords?(NO)
 - Augment a user model in rails using `bcrypt`, `password_digest`, and `has_secure_password`
 - Expose this information in a sample rails app
 - Go over sessions, cookies, and implement sign up, log in, and log out
@@ -16,21 +16,38 @@ Rails Authentication & Authorization
 
 ### Discussion
 - What's the difference between Authentication vs Authorization?
-  - Authentication - 
-  - Authorization - 
+  - Authentication - make sure a user is who they say they are
+  - Authorization - limiting access
 
 - Why don't we want to save a user's password in plaintext?
-
 - What is hashing and how does it make password storage more secure?
+  pass123 => sldkjfa;lkfjalksd;djskdj
+  pass123 => sldkjfa;lkfjalksd;djskdj
+  pass134 => sflkdsjflksdjflkjkjdsfhjds
 
 - What are rainbow tables and how can they defeat a password hashing strategy?
-
 - What is salting? What is a salt? How can it defeat a rainbow tables attack?
-  
+  pw => 'pass123' + 'lksdjfa;lkfjasklj'
+  pw => 'pass123' + 'lsdfjsdlkfjasdfsa'
 
 ### Implemention
 - Create a `username` and `password_digest` field for Authentication
 - BCrypt: `create` vs `new`, `==`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Part II
 - Sign Up, Login and Logout
