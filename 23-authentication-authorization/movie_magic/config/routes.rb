@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :reviews, only: [:new, :create]
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show, :new, :create]
   resources :movies 
 
   patch "sessions/reset", to: "sessions#reset_session"

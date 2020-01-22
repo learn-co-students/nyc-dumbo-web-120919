@@ -7,7 +7,7 @@ Rails Authentication & Authorization
 - Understand, theoretically, how authentication and authorization work
   - Understand the _difference_ between authentication and authorization and how they fit under the umbrella topic _auth_
 - Discuss different encryption and hashing schemes, and `bcrypt` specifically
-  - Do we want to ever store plaintext user passwords? (no)
+  - Do we want to ever store plaintext user passwords?
 - Augment a user model in rails using `bcrypt`, `password_digest`, and `has_secure_password`
 - Expose this information in a sample rails app
 - Go over sessions, cookies, and implement sign up, log in, and log out
@@ -16,26 +16,17 @@ Rails Authentication & Authorization
 
 ### Discussion
 - What's the difference between Authentication vs Authorization?
-  - Authentication - who someone is
-  - Authorization - what can you do
+  - Authentication - 
+  - Authorization - 
 
 - Why don't we want to save a user's password in plaintext?
-  - a hacker could access the database and log into our website as you
-  - most users use the same password, so we could compromise 
 
 - What is hashing and how does it make password storage more secure?
-  "password123" -> "jahflkjashdflajshdhflljhsdafljhsab"
-  "password123" -> "jahflkjashdflajshdhflljhsdafljhsab"
-  "password321" -> "asdkljfhy89pq34thrkdnf;kadsjaj"
 
 - What are rainbow tables and how can they defeat a password hashing strategy?
 
-
 - What is salting? What is a salt? How can it defeat a rainbow tables attack?
-  Create Pw: "password123" + ".aksjdhfalksdjfh" -> "asdiufaoer7iuaefh23riuhfbalsf" = 
-    ".aksjdhfalksdjfh|asdiufaoer7iuaefh23riuhfbalsf"
-  Create Pw: "password123" + "qo8237rilwukfjhh" -> "q8734iuhfawlirq3y4or8wieufaef"
-  Login: "password123" + ".aksjdhfalksdjfh" -> "asdiufaoer7iuaefh23riuhfbalsf"
+  
 
 ### Implemention
 - Create a `username` and `password_digest` field for Authentication

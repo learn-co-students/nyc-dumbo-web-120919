@@ -11,10 +11,19 @@
   </head>
 
   <body>
+
       <div class='nav'>
         <%# <span><h1>Movie Magic</h1></span> %>
         <img class='logo' src="http://jeremythemagician.com/wp-content/uploads/2013/08/movie-magic-logo-jpg_w800_h600_fit.jpg" alt="mm">
       </div>
+
+      <ul>
+        <li><%= link_to 'User Home', users_path %></li>
+        <li><%= link_to 'Movie Home', movies_path %></li>
+        <li><%= link_to 'New Movie', new_movie_path %></li>
+        <li class='right'><%= link_to 'Sign-in/Sign-up', new_user_path %></li>
+      </ul>
+
     <%= yield %>
   </body>
 </html>
