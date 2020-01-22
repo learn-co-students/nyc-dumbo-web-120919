@@ -22,9 +22,11 @@
         <li><%= link_to 'Movie Home', movies_path %></li>
         <li><%= link_to 'New Movie', new_movie_path %></li>
         <% if @logged_in_user %>
-          <li class='right'>Welcome <%= @logged_in_user.name %></li>
+          <li class='right'> <%= link_to "Logout", eliminate_path, method: :delete %> </li>
+          <li class='right'>Welcome, <%= @logged_in_user.name %>!</li>
         <% else %>
-          <li class='right'><%= link_to 'Sign-in/Sign-up', new_user_path %></li>
+          <li class='right'><%= link_to 'Sign-up', new_user_path %></li>
+          <li class='right'><%= link_to 'Login', login_path %></li>
         <% end %>
       </ul>
 

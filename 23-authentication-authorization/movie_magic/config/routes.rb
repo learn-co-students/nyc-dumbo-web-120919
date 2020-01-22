@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   #resources :movies, only: [:index, :show, :new, :create, :edit, :update]
   # resources :movies, except: [:delete]
 
+  get "sessions/login", to: "sessions#new", as: "login"
+  post "sessions/login", to: "sessions#create"
+  delete "sessions", to: "sessions#destroy", as: "eliminate"
 
   # HTTP  |   URL   | Controller#Action  | Prefix
   # -------------------------------------------------

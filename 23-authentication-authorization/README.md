@@ -35,20 +35,6 @@ Rails Authentication & Authorization
 - BCrypt: `create` vs `new`, `==`
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Part II
 - Sign Up, Login and Logout
 - When to use a "SessionsController" and when to use ApplicationController
@@ -56,9 +42,11 @@ Rails Authentication & Authorization
 - Using information about our signed in user
 
 
-Authorization
+#### Authorization
 - can't create a movie unless logged in
-- limit functionality of edit and delete for a movie
+- Can't delete a movie unless logged in
+- Create a Review without having to select yourself
+- Can only see the logged_in users show page
 
 
 ### How does auth work in theory?

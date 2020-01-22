@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :authorize, only: [:new, :create, :index]
 
   def index 
     @users = User.all
@@ -7,9 +8,16 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+
+    if @logged_in_user === @user
+    else
+      flash[:errors] = ["You can onlye see your own info silly......only*"]
+      redirect_to user_path(@logged_in_user)
+    end 
+
   end 
 
-  # ------------------ Added for Authorization --------------
+  # ------------------ Added for Authorization Lecture--------------
 
   def new
     @user = User.new 

@@ -1,4 +1,11 @@
 <div class="show-body">
+
+  <% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+      <p><%= error %></p>
+    <% end %>
+  <% end %>
+
   <h2><%= @user.name %></h2>
   <marquee scrolldelay='60'><img class="show-img" src="<%= @user.img_url %>" alt="<%= @user.name%>"></marquee> 
 

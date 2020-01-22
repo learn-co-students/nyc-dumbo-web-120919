@@ -26,6 +26,7 @@ class MoviesController < ApplicationController
   def new 
     @movie = Movie.new
 
+
     # @errors = flash[:some_errors]
     # render :new
   end 
