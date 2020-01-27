@@ -1,0 +1,165 @@
+/* layout */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Lato, 'Helvetica Neue', Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  transition: all 0.2s;
+  background-color: #FFF8E7;
+}
+
+/* menu */
+#menu {
+  padding: 0.5rem;
+  background-color: rgb(74, 199, 81);
+  color: #FFFFFF;
+}
+
+/* main */
+main {
+  margin: 2rem 0;
+}
+
+/* responsive width */
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 400px) {
+  .container {
+    width: 380px;
+  }
+}
+
+@media (min-width: 700px) {
+  .container {
+    width: 600px;
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    width: 800px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1100px;
+  }
+}
+
+/* buttons */
+.button {
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.75em 1.5em;
+  transition: opacity 0.2s ease;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+/* cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 1rem 0 0 0;
+  padding: 0;
+}
+
+.card {
+	flex: 0 1 calc(25% - 1em);
+  margin: 1rem 0.5em;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.954);
+  animation: enter 0.25s ease-out;
+  -webkit-box-shadow: 2px 2px 7px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 7px -1px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 7px -1px rgba(0,0,0,0.75);
+}
+
+@keyframes enter {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.card .image {
+  position: relative;
+}
+
+.card .image img {
+  width: 100%;
+  height: 100%;
+}
+
+.card .image .delete-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  background-color: var(--theme-alt);
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.card .content {
+  padding: 1rem 0.5rem;
+  flex: 1;
+}
+
+.card .title {
+  font-weight: 700;
+  font-size: 1.1em;
+  margin-bottom: 0.5rem;
+}
+
+.card .description {
+  color: rgba(0, 0, 0, 0.68);
+}
+
+.card .button.delete-button {
+  background-color: rgba(255,255,255,.75);
+  color: rgba(0,0,0,.85);
+}
+
+.card .button.donate-button {
+  background-color: rgb(74, 199, 81);
+  color: rgba(0, 0, 0, 0.85);
+  width: 100%;
+}
+
+@media (min-width: 400px) and (max-width: 699px) {
+  .card {
+    flex: 0 1 auto;
+    margin: 1em 0;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 899px) { 
+  .card {
+    flex: 0 1 calc(50% - 2em);
+    margin: 1em;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1200px) {
+  .card {
+    flex: 0 1 calc(33% - 2em);
+    margin: 1em;
+  }
+}
