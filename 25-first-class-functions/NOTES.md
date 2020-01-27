@@ -1,0 +1,5 @@
+- 1st class functions
+  - callbacks
+  - array methods
+- scope
+- hoisting
