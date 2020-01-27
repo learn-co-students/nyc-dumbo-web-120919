@@ -1,48 +1,3 @@
-/******* 1st Class Functions *******/
-// 1. functions can be assigned to a variable
-function sayHi(name) {
-  console.log(`Hi ${name}`)
-}
-
-const alsoSayHi = sayHi
-
-alsoSayHi()
-
-// functions are objects too!
-console.dir(sayHi)
-sayHi.wat = "hm"
-sayHi.wat
-
-// 2. functions can be passed around as arguments to other functions
-function fnCaller(fn, value) {
-  return fn(value)
-}
-
-fnCaller(sayHi, "Ian")
-
-// 3. functions can be returned from functions
-function multiplyBy2(number) {
-  return number * 2
-}
-function multiplyBy3(number) {
-  return number * 3
-}
-
-function createMultiplier(multiplier) {
-  return function (number) {
-    return number * multiplier
-  }
-}
-
-const tripler = createMultiplier(3) // return a FUNCTION DEFINITION
-tripler(4) // invoke it
-
-/******* Array methods *******/
-const nums = [1, 2, 3]
-nums.forEach(function (num) {
-  console.log(num)
-})
-
 /******* Lexical Scoping *******/
 
 /******* global vs function vs block scope *******/
@@ -122,3 +77,49 @@ willIBeHoisted()
 function willIBeHoisted() {
   console.log("hmm")
 }
+
+/******* 1st Class Functions *******/
+// 1. functions can be assigned to a variable
+function sayHi(name) {
+  console.log(`Hi ${name}`)
+}
+
+const alsoSayHi = sayHi
+
+alsoSayHi()
+
+// functions are objects too!
+console.dir(sayHi)
+sayHi.wat = "hm"
+sayHi.wat
+
+// 2. functions can be passed around as arguments to other functions
+function fnCaller(fn, value) {
+  return fn(value)
+}
+
+fnCaller(sayHi, "Ian")
+
+// 3. functions can be returned from functions
+function multiplyBy2(number) {
+  return number * 2
+}
+function multiplyBy3(number) {
+  return number * 3
+}
+
+function createMultiplier(multiplier) {
+  return function (number) {
+    return number * multiplier
+  }
+}
+
+const tripler = createMultiplier(3) // return a FUNCTION DEFINITION
+tripler(4) // invoke it
+
+/******* Array methods *******/
+const nums = [1, 2, 3]
+nums.forEach(function (num) {
+  console.log(num)
+})
+
