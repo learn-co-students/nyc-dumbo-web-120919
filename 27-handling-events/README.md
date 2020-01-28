@@ -5,32 +5,36 @@
 - [ ] Identify commonly used event listeners
 - [ ] Identify important attributes on the event object and their uses
 - [ ] Combine knowledge of DOM manipulation and events to allow user interaction to change DOM
-- [ ] *Bonus* Explain event propagation and identify how this can be used 
 
 ## Outline
 - Discuss browser events
 - Manipulate Wikipedia using browser events
   - on clicking the header, change the color to red
   - (class exercise) on clicking *any* p tag, change the font to comic sans ("Comic Sans MS, cursive, sans-serif")
-    - bonus: only change the font to comic sans when hovering on a p tag, and change it back when the mouse is no longer hovering
     - what happens if a new p tag gets added to the page?
 - Make our zoo interactive
   - defer vs DOMContentLoaded
-  - button click event
+  - click event
   - form submit event 
     - how to stop the page from reloading
     - how to get input field value
-  - adding elements to the DOM
-    - createElement vs innerHTML vs insertAdjacentHTML
 
 ### What are some common things users do on a webpage?
+
+watch a video
+click stuff
+draw (move your mouse)
+scroll
+submit
+
+
 
 [All the Events](https://developer.mozilla.org/en-US/docs/Web/Events)
 
 ### What are the steps for creating interaction with the DOM?
-1. 
-2. 
-3. 
+1. What element are we listening for events
+2. What kind of event are we listening for
+3. What do we want to happen (what function do we want to run)
 
 ## What are Web Events 🤔
 
