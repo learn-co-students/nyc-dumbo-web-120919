@@ -54,7 +54,7 @@ const firstCard = cardsUl.querySelector("li") // finds the first LI within the c
 
 ### getElementById
 #### document.getElementById(_id_)
-Returns the first DOM element with the given _id_.
+Returns the first DOM element with the given _id_ within the document. Must be called on the _document_.
 [Document.getElementById()](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById)
 
 Example:
