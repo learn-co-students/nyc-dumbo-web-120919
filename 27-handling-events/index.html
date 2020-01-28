@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="index.js"></script>
+  <link rel="stylesheet" href="main.css">
+  <title>zkpr.</title>
+</head>
+<body>
+  <header id="menu">
+    <h1>welcome to zkpr.</h1>
+    <div class="toggle-switch">
+      <input type="checkbox" id="toggle-dark-mode">
+      <label for="toggle-dark-mode"></label>
+    </div>
+  </header>
+  <main>
+    <section class="container">
+      <form id="animal-form" class="form">
+        <input type="text" name="name" placeholder="Enter animal name..." autocomplete="off">
+        <input type="text" name="image_url" placeholder="Enter image url..." autocomplete="off">
+        <textarea name="description" placeholder="Enter description..."></textarea>
+        <input type="submit" value="Adopt Animal" class="button">
+      </form>
+      <ul id="animal-list" class="cards">
+        <!-- Animals here -->
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
