@@ -8,6 +8,25 @@ const animalList = document.querySelector("#animal-list")
 lightSwitch.addEventListener("click", handleLightSwitchClick)
 animalForm.addEventListener("submit", handleFormSubmit)
 
+// EVENT DELEGATION
+// 1. find the closest stable parent of the elements you care about
+animalList.addEventListener("click", e => {
+  // 2. find a way to identify the specific element you care about
+  if (e.target.dataset.action === "donate") {
+    console.log(e.target)
+    console.log(e.target.dataset)
+    const outerLi = e.target.closest(".card") // from the target element, find the closest parent that matches the css selector
+    const donationCount = outerLi.querySelector(".donation-count")
+    donationCount.textContent = parseInt(donationCount.textContent) + 10
+  }
+
+  if (e.target.dataset.action === "freeToTheWild") {
+    // find the card!
+    const outerLi = e.target.closest(".card")
+    // remove the card!
+    outerLi.remove()
+  }
+})
 
 /**************** Event Handlers ****************/
 function handleLightSwitchClick() {
@@ -38,10 +57,12 @@ function handleFormSubmit(event) {
 function renderOneAnimal(animalObj) {
   const outerLi = document.createElement('li')
   outerLi.className = "card"
+  outerLi.dataset.id = animalObj.id
 
   outerLi.innerHTML = `
     <div class="image">
       <img src="${animalObj.imageUrl}" alt="${animalObj.name}">
+      <button data-action="freeToTheWild" class="delete button">X</button>
     </div>
     <div class="content">
       <div class="name">${animalObj.name}</div>
@@ -50,10 +71,25 @@ function renderOneAnimal(animalObj) {
       </div>
       <div class="description">${animalObj.description}</div>
     </div>
-    <button class="donate button">
+    <button data-action="donate" class="donate button">
       Donate $10
     </button>
   `
+
+  // NESTED EVENT HANDLERS
+  // const btn = outerLi.querySelector(".donate.button")
+  // let counter = animalObj.donations
+
+  // btn.addEventListener("click", handleDonateButton)
+
+  // function handleDonateButton() {
+  //   // incremement the donation amount
+  //   counter += 10
+  //   // update the DOM
+  //   const donationSpan = outerLi.querySelector(".donation-count")
+  //   donationSpan.textContent = counter
+  // }
+
   animalList.append(outerLi)
 }
 
@@ -63,3 +99,29 @@ function renderAllAnimals(animals) {
 
 /**************** Initial Render ****************/
 renderAllAnimals(animalData)
+
+// document.body.addEventListener("click", e => {
+//   console.log("BODY", e)
+// })
+
+// document.querySelector(".card").addEventListener("click", e => {
+//   console.log("CARD", e)
+// })
+
+// document.querySelector(".donate.button").addEventListener("click", e => {
+//   console.log("BUTTON", e)
+// })
+
+// const donateBtns = document.querySelectorAll(".donate.button")
+
+// donateBtns.forEach(function (btn) {
+//   btn.addEventListener("click", function (e) {
+//     console.log(e)
+//   })
+// })
+
+// donateBtns.forEach(btn => {
+//   btn.addEventListener("click", e => {
+//     console.log(e)
+//   })
+// })

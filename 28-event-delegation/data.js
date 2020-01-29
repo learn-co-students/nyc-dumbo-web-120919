@@ -26,5 +26,12 @@ const animalData = [
     imageUrl: "https://external-preview.redd.it/hqv76hMTwDpeM4o4jp55PIUuBCwTq5T66zy_0MJiVv8.jpg?auto=webp&s=36c0ae0727537b4a01c42cc32d37770f5b25e3e9",
     description: "Sings songs!",
     donations: 0
+  },
+  {
+    id: 5,
+    name: "Wombat",
+    imageUrl: "https://live.staticflickr.com/4158/33752020123_eab52e719d_b.jpg",
+    description: "Ryhmes with combat. Maybe marsupial?",
+    donations: 0
   }
 ]

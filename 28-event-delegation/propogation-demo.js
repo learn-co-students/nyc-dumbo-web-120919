@@ -8,6 +8,7 @@ document.querySelectorAll("*").forEach(function (element) {
     // this is here so we can do the animation
     e.stopPropagation()
 
+    // wait half a second, then run some code
     setTimeout(function () {
       element.classList.remove("bubbling")
 
