@@ -8,9 +8,17 @@ Active Record Associations
 * Describe the methods that the relationship macros add to a model
 * Practice looking up library documentation for Active Record Migrations, Queries and Association Macros
 
+## Active Record
+- Pros: simplicity, only need a basic understanding of SQL, takes away boilerplate code, automates certain jobs: rake makes it easier to work with Active Record
+- Cons: harder to make changes (migrations), LOTS of new syntax, a lot of convention to learn (singular/plural), abstraction is scary, what's going on under the hood?
+
+Game -< Review >- Player
+
 ## Outline
 * Review migrations
   * `db:migrate` and `db:rollback`, `db:migrate:status`
+    * see a rollback again (and reasons to make a new migration)
+    * what to do if there's an error with rolling back
   * `add_column` migration
   * Demonstrate `seeds.rb`
 * Review CRUD
