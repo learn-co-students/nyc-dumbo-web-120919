@@ -20,7 +20,7 @@
 
 /* css variables for theming */
 :root {
-  --main-bg-color: #FFF8E7;
+  --main-bg-color: rgb(255, 237, 194);
   --alt-bg-color: rgba(255, 255, 255, 0.954);
   --main-font-color: #FFFFFF;
   --alt-font-color: rgba(0, 0, 0, 0.85);
@@ -34,7 +34,7 @@ body.dark-mode {
   --alt-bg-color: rgb(89, 89, 89);
   --main-font-color: #000000;
   --alt-font-color: rgba(255, 255, 255, 0.85);
-  --alt-font-color-light: rgba(227, 227, 227, 0.68);
+  --alt-font-color-light: rgba(255, 255, 255, 0.776);
   --theme-primary: #7965dc;
 }
 
@@ -150,6 +150,7 @@ main {
 
 .form input,
 .form textarea {
+  font-size: 0.8rem;
   width: 100%;
   border: 1px solid rgba(28, 28, 28, 0.55);
   padding: 0.5em 1em;
@@ -214,36 +215,35 @@ main {
   height: 100%;
 }
 
-.card .image .delete-button {
+.card .image .delete.button {
   position: absolute;
   top: 0;
   right: 0;
   cursor: pointer;
-  background-color: var(--theme-alt);
-  color: var(--alt-font-color);
+  background-color: rgba(255,255,255,.75);
+  color: rgba(0,0,0,.85);
 }
 
 .card .content {
   padding: 1rem 0.5rem;
   flex: 1;
-}
-
-.card .title {
-  font-weight: 700;
-  font-size: 1.1em;
-  margin-bottom: 0.5rem;
-}
-
-.card .description {
   color: var(--alt-font-color-light);
 }
 
-.card .button.delete-button {
-  background-color: rgba(255,255,255,.75);
-  color: rgba(0,0,0,.85);
+.card .name {
+  font-weight: 700;
+  font-size: 1.1em;
 }
 
-.card .button.donate-button {
+.card .donations {
+  font-style: italic;
+}
+
+.card .description {
+  margin-top: 0.5rem;
+}
+
+.card .donate.button {
   background-color: var(--theme-primary);
   color: var(--alt-font-color);
   width: 100%;

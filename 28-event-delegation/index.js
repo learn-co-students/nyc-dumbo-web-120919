@@ -45,10 +45,13 @@ function renderOneAnimal(animalObj) {
     </div>
     <div class="content">
       <div class="name">${animalObj.name}</div>
+      <div class="donations">
+        $<span class="donation-count">${animalObj.donations}</span> Donated
+      </div>
       <div class="description">${animalObj.description}</div>
     </div>
-    <button class="button donate-button" data-action="donate">
-      $<span class="donation-count">${animalObj.donations}</span> Donated
+    <button class="donate button">
+      Donate $10
     </button>
   `
   animalList.append(outerLi)

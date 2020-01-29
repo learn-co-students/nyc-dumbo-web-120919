@@ -22,3 +22,6 @@
 - Used in a variety of ways, but principally used to store information about that particular node
 - HTML must have attribute of `data-<key>="<value>"`
 - Accessible on DOM nodes via `dataset` attribute as a object
+
+### Resources
+[Bubbling and Capturing](https://javascript.info/bubbling-and-capturing)
