@@ -1,10 +1,12 @@
 # Event Delegation
 
 ## SWBATs
+- [ ] Identify strategies for handling events
 - [ ] Explain event propagation and identify how it can be used
 - [ ] Use conditional logic in combination with event propagation to delegate events
 - [ ] Use a single event handler callback to handle multiple events
 - [ ] Use the `dataset` attribute to store data on specific DOM elements
+- [ ] *Bonus* Use arrow function syntax
 
 ## Notes
 
