@@ -1,3 +1,25 @@
+// function sleep(time) {
+//   const start = new Date()
+//   while (new Date() - start < time) { }
+// }
+
+// console.log("BEFORE sleep")
+
+// let ourPokemon = null
+
+// fetch("https://pokeapi.co/api/v2/pokemon/1/")
+//   .then(r => r.json())
+//   .then((data) => {
+//     ourPokemon = data
+//     console.log("data is", data)
+//   })
+
+// console.log(ourPokemon)
+// console.log("AFTER sleep")
+
+
+
+
 /****************  DOM Elements ****************/
 const lightSwitch = document.querySelector("#toggle-dark-mode")
 const animalForm = document.querySelector("#animal-form")
@@ -12,12 +34,44 @@ animalList.addEventListener("click", e => {
     const outerLi = e.target.closest(".card")
     const donationCount = outerLi.querySelector(".donation-count")
     const newDonations = parseInt(donationCount.textContent) + 10
+    const animalId = outerLi.dataset.id
+
+    fetch(`http://localhost:3000/animals/${animalId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        donations: newDonations
+      })
+    })
+
+    // optimistic rendering: DOM manipulation outside of fetch
     donationCount.textContent = newDonations
   }
 
   // Delete button clicked
   if (e.target.dataset.action === "freeToTheWild") {
     const outerLi = e.target.closest(".card")
+    const animalId = outerLi.dataset.id
+    fetch(`http://localhost:3000/animals/${animalId}`, {
+      method: "DELETE"
+    })
+      .then(r => {
+        if (r.ok) {
+          return r.json()
+        } else {
+          throw "ERROR"
+        }
+      })
+      .then(() => {
+        // pessimistic
+        outerLi.remove()
+      })
+      .catch(err => console.error(err))
+
+    // optimistic
     outerLi.remove()
   }
 })
@@ -43,8 +97,20 @@ function handleFormSubmit(event) {
     donations: 0
   }
 
-  // slap on the DOM
-  renderOneAnimal(newAnimal)
+  fetch("http://localhost:3000/animals", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify(newAnimal)
+  })
+    .then(r => r.json())
+    .then(actualNewAnimal => {
+      // slap on the DOM
+      renderOneAnimal(actualNewAnimal)
+    })
+
 }
 
 /**************** Render Helpers ****************/
@@ -78,4 +144,15 @@ function renderAllAnimals(animals) {
 }
 
 /**************** Initial Render ****************/
-renderAllAnimals(animalData)
+// renderAllAnimals(animalData)
+fetch("http://localhost:3000/animals")
+  .then(r => r.json())
+  .then(data => {
+    // once we're here, do DOM stuff
+    renderAllAnimals(data)
+  })
+
+
+// When X event happens
+// Do Y fetch
+// And slap Z on/off the DOM

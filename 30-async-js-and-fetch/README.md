@@ -1,4 +1,4 @@
-# Ajax and Fetch
+# Async JS and Fetch
 
 ## SWBATs
 - [ ] Recognize the problems solved by asynchronous code
