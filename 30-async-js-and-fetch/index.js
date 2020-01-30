@@ -62,7 +62,7 @@ animalList.addEventListener("click", e => {
         if (r.ok) {
           return r.json()
         } else {
-          throw "ERROR"
+          throw new Error("Something went wrong!")
         }
       })
       .then(() => {
@@ -72,7 +72,7 @@ animalList.addEventListener("click", e => {
       .catch(err => console.error(err))
 
     // optimistic
-    outerLi.remove()
+    // outerLi.remove()
   }
 })
 
