@@ -16,7 +16,7 @@ const animalData = [
   {
     id: 3,
     name: "Mantis Shrimp",
-    imageUrl: "https://media.wired.com/photos/5bc7d05bf867c63ebba1b104/1:1/w_1800,h_1800,c_limit/mantisshrimp-467993194.jpg",
+    imageUrl: "https://66.media.tumblr.com/459d74833cfb0bb35a4e625eadfda9ab/tumblr_inline_pmbj25laAJ1ql75n8_1280.jpg",
     description: "The mantis shrimp can punch with the speed of a .22 caliber bullet—strong enough to break the shells of its prey, as well as aquarium glass.",
     donations: 0
   },

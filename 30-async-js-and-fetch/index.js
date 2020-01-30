@@ -11,7 +11,8 @@ animalList.addEventListener("click", e => {
   if (e.target.dataset.action === "donate") {
     const outerLi = e.target.closest(".card")
     const donationCount = outerLi.querySelector(".donation-count")
-    donationCount.textContent = parseInt(donationCount.textContent) + 10
+    const newDonations = parseInt(donationCount.textContent) + 10
+    donationCount.textContent = newDonations
   }
 
   // Delete button clicked
