@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  image_url: MyString
+  description: MyString
+  donations: 1
+  species: one
+
+two:
+  name: MyString
+  image_url: MyString
+  description: MyString
+  donations: 1
+  species: two

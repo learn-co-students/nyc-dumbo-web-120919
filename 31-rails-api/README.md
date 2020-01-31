@@ -1,14 +1,10 @@
-# SWBATs
-## Backend
+# Rail as an API
+
+## SWBATs
 - [ ] Generate a Rails API
 - [ ] Understand CORS configuration
 - [ ] Use a serializer to render JSON
-- [ ] BONUS: Rails enums
-
-## Frontend
-- [ ] Fetch (GET and POST)
-- [ ] DOM Manipulation
-- [ ] Optimistic/Pessimistic Rendering
+- [ ] BONUS: Use Rails enums
 
 ## Setting Up the Backend Rails API
 

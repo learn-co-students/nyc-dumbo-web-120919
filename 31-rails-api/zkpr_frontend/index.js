@@ -39,7 +39,7 @@ function handleFormSubmit(e) {
     species_name: animalSpeciesName,
     image_url: animalImage,
     description: animalDescription,
-    diet: animalDiet,
+    diet: parseInt(animalDiet),
     donations: 0
   }
 
@@ -51,10 +51,19 @@ function handleFormSubmit(e) {
     },
     body: JSON.stringify(newAnimal)
   })
-    .then(r => r.json())
+    .then(r => {
+      if (r.ok) {
+        return r.json()
+      } else {
+        throw new Error("really nope")
+      }
+    })
     .then(actualNewAnimal => {
       // slap on the DOM
       renderOneAnimal(actualNewAnimal)
+    })
+    .catch(error => {
+      alert(error)
     })
 
 }
@@ -87,7 +96,8 @@ function handleDelete(e) {
     method: "DELETE"
   })
     .then(r => r.json())
-    .then(() => {
+    .then(data => {
+      console.log(data)
       // pessimistic rendering: DOM manipulation inside of fetch
       outerLi.remove()
     })
