@@ -7,6 +7,7 @@
 5. A user should be able to add a new nickname to a dog using the `#new-nickname-form`. To do this, you need to send a POST request to `'/nicknames'` endpoint.
 6. A user should be able to see a list of nicknames that belong to the dog in `.nickname-list`
 
+ROUTE: POST '/nicknames'
 The headers of request should be:
 
 ```
