@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  body: MyString
+  part_of_speech: MyString
+  likes: 1
+  word: one
+
+two:
+  body: MyString
+  part_of_speech: MyString
+  likes: 1
+  word: two

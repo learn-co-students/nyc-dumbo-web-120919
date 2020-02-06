@@ -26,3 +26,10 @@ function postDefinition(definition) {
   })
     .then(r => r.json())
 }
+
+function patchLikeDefinition(id) {
+  return fetch(BASE_URL + "/definitions/" + id + "/upvote", {
+    method: "PATCH"
+  })
+    .then(r => r.json())
+}

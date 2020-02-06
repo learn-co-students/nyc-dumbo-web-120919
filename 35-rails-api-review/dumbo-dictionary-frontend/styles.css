@@ -67,7 +67,14 @@ p {
   margin-bottom: 1rem;
 }
 
-/* words */
+.card .category {
+  border-radius: 1em;
+  padding: 0.25em 0.8em;
+  background-color: rgb(245, 255, 112);
+  color: #333;
+  font-weight: 700;
+}
+
 .word {
   font-family: Georgia, Cambria, "Times New Roman", Times, serif;
   font-size: 2rem;
@@ -102,6 +109,7 @@ p {
   padding: 0.5em 1em;
   outline: 0;
   font-size: 1.1rem;
+  transition: all 0.2s ease;
 }
 
 .form select {

@@ -7,6 +7,8 @@ const state = {
   words: [],
   selectedWordId: null
 }
+// state = { } // not working
+// state.words.push(something) // works
 
 /****** DOM Elements ******/
 const mainContainer = document.querySelector("#main-container")
@@ -27,6 +29,12 @@ mainContainer.addEventListener("click", e => {
   if (e.target.dataset.action === "show-word") {
     handleWordClick(e)
   }
+  if (e.target.dataset.action === "like") {
+    handleDefinitionLike(e)
+  }
+  if (e.target.dataset.action === "unlike") {
+    handleDefinitionUnlike(e)
+  }
 })
 
 navActions.addEventListener("click", e => {
@@ -39,6 +47,21 @@ navActions.addEventListener("click", e => {
 })
 
 /****** Event Handlers ******/
+function handleDefinitionLike(e) {
+  // get the id of definition that is being clicked
+  const defId = e.target.closest(".like-buttons").dataset.id
+  patchLikeDefinition(defId)
+    .then(updatedDef => {
+      const foundWord = state.words.find(word => word.id === state.selectedWordId)
+      const foundDef = foundWord.definitions.find(def => def.id === updatedDef.id)
+      foundDef.likes = updatedDef.likes
+      renderWordDetail()
+    })
+  // make PATCH /defintions/:id/upvote
+  // update definition in local state 
+  // rerender
+}
+
 function handleCreateWordSubmit(e) {
   // get form values
   const newWord = {
@@ -102,7 +125,7 @@ function renderWordCard(word) {
     <h3 class="word" data-id="${word.id}" data-action="show-word">
       ${word.content}
     </h3>
-    <em>${word.category}</em>
+    <span class="category">${word.category}</span>
   `
   mainContainer.append(cardDiv)
 }
@@ -128,7 +151,7 @@ function renderWordDetail() {
   mainContainer.innerHTML = `
     <div class="card">
       <h3 class="word">${selectedWord.content}</h3>
-      <p>${selectedWord.category}</p>
+      <span class="category">${selectedWord.category}</span>
     </div>
     ${sortedDefinitions.map(definitionToHTML).join("")}
     <div class="card">
