@@ -1,0 +1,195 @@
+/* mini reset */
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/* layout */
+body {
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  background-color: #E1E1E3
+}
+
+p {
+  margin: 1rem 0;
+}
+
+.main {
+  margin: 2rem 1rem;
+}
+
+.container {
+  max-width: 60rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* menu */
+.menu {
+  background-color: #1D2439;
+}
+
+.menu .container,
+.menu nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu .item {
+  padding: 1rem;
+  flex: 0 0 auto;
+  color: #f1f1f1;
+  font-size: 1.125rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.menu .item:hover {
+  color: #EFFF00;
+}
+
+.menu .search {
+  flex-grow: 2;
+}
+
+.menu .search input {
+  width: 100%;
+  height: 2.125rem;
+  font-size: 1rem;
+  padding: 0 1em;
+}
+
+/* cards */
+.card {
+  background-color: #fff;
+  padding: 1rem 1.5rem 2rem;
+  margin-bottom: 1rem;
+}
+
+/* words */
+.word {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.word:hover {
+  color: rgb(0, 38, 255);
+}
+
+/* forms */
+.form {
+  width: 100%;
+}
+
+.form label {
+  display: block;
+  margin: 1em 0 0.25em;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.form input, 
+.form select,
+.form textarea {
+  background-color: #EEEEEE;
+  width: 100%;
+  border: none;
+  padding: 0.5em 1em;
+  outline: 0;
+  font-size: 1.1rem;
+}
+
+.form select {
+  border-radius: 0;
+	line-height:normal;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	-ms-appearance:none;
+	appearance:none;
+}
+
+.form input:focus, 
+.form select:focus,
+.form textarea:focus {
+  background-color: #fff;
+  border: 1px solid black;
+  box-shadow: 0 2px 0 black;
+}
+
+.form input[type=checkbox],
+.form input[type=submit] {
+  width: auto;
+}
+
+.form label.checkbox {
+  display: initial;
+}
+
+.form .messages {
+  padding: 1em;
+}
+
+.form button,
+.form input[type=submit] {
+  display: block;
+  background-color: #EFFF00;
+}
+
+.form button:hover,
+.form input[type=submit]:hover {
+  background-color: rgb(245, 255, 112);
+}
+
+
+button,
+input[type=submit] {
+  cursor: pointer;
+  color: #333;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 2em;
+  border: 1px solid black;
+  box-shadow: 2px 3px 0 rgb(82, 82, 82);
+  transition: all 0.3s ease;
+}
+
+button:hover,
+input[type=submit]:hover {
+  box-shadow: 3px 4px 0 rgb(142, 142, 142);
+}
+
+button:focus,
+input[type=submit]:focus {
+  outline: thin;
+}
+
+button:active,
+input[type=submit]:active {
+  box-shadow: 0px 1px 0 rgb(45, 45, 45);
+  transform: translateY(4px);
+}
+
+/* like buttons */
+.like-buttons {
+  display: flex;
+}
+
+.like-button {
+  display: inline-block;
+  background-color: #fff;
+  padding: 0.25rem 0.5rem;
+  margin: 0;
+}
+
+.like-buttons .like-button:first-child {
+  border-radius: 20% 0 0 20%;
+}
+
+.like-buttons .like-button:last-child {
+  border-radius: 0 20% 20% 0;
+}
