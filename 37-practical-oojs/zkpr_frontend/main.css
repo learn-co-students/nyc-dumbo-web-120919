@@ -1,0 +1,285 @@
+/* css variables for theming */
+:root {
+  --main-bg-color: rgb(255, 237, 194);
+  --alt-bg-color: rgba(255, 255, 255, 0.954);
+  --main-font-color: #FFFFFF;
+  --alt-font-color: rgba(0, 0, 0, 0.85);
+  --alt-font-color-light: rgba(0, 0, 0, 0.68);
+  --theme-primary: rgb(74, 199, 81);
+  --box-shadow: 2px 2px 7px -1px rgba(0,0,0,0.75);
+}
+
+body.dark-mode {
+  --main-bg-color: rgb(0, 0, 0);
+  --alt-bg-color: rgb(89, 89, 89);
+  --main-font-color: #000000;
+  --alt-font-color: rgba(255, 255, 255, 0.85);
+  --alt-font-color-light: rgba(255, 255, 255, 0.776);
+  --theme-primary: #7965dc;
+}
+
+/* mini reset */
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* layout */
+body {
+  font-family: Lato, 'Helvetica Neue', Helvetica, sans-serif;
+  color: var(--alt-font-color);
+  font-size: 14px;
+  transition: all 0.2s;
+  background-color: var(--main-bg-color);
+}
+
+/* menu */
+#menu {
+  padding: 0.5rem;
+  background-color: var(--theme-primary);
+  color: #FFFFFF;
+}
+
+.toggle-switch {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5rem;
+}
+
+.toggle-switch input {
+  display: none;
+}
+
+.toggle-switch label {
+  position : relative ;
+  display : inline-block;
+  width : 40px;
+  height : 20px;
+  background-color: var(--alt-bg-color);
+  border-radius: 20px;
+}
+
+.toggle-switch label::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--alt-font-color);
+  top: 1px;
+  left: 1px;
+  transition: all 0.3s;
+}
+
+.toggle-switch input:checked + label::after {
+  left: 20px; 
+}
+.toggle-switch input:checked + label {
+  background-color: var(--alt-bg-color);
+}
+
+/* main */
+main {
+  margin: 2rem 0;
+}
+
+/* responsive width */
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+@media (min-width: 400px) {
+  .container {
+    width: 380px;
+  }
+}
+
+@media (min-width: 700px) {
+  .container {
+    width: 600px;
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    width: 800px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1100px;
+  }
+}
+
+/* forms */
+.form {
+  background-color: var(--alt-bg-color);
+  padding: 1em;
+  -webkit-box-shadow: var(--box-shadow);
+  -moz-box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
+}
+
+.form select {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  background-position: right 50%;
+  background-repeat: no-repeat;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDZFNDEwNjlGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDZFNDEwNkFGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0NkU0MTA2N0Y3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0NkU0MTA2OEY3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PuGsgwQAAAA5SURBVHjaYvz//z8DOYCJgUxAf42MQIzTk0D/M+KzkRGPoQSdykiKJrBGpOhgJFYTWNEIiEeAAAMAzNENEOH+do8AAAAASUVORK5CYII=);
+  border-radius: 0;
+}
+
+.form input,
+.form textarea,
+.form select {
+  font-size: 0.8rem;
+  width: 100%;
+  border: 1px solid rgba(28, 28, 28, 0.55);
+  padding: 0.5em 1em;
+  margin: 1em 0 0.25em;
+}
+
+.form input[type=submit] {
+  margin: 1em 0 0 0;
+  width: auto;
+}
+
+/* buttons */
+.button {
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.75em 1.5em;
+  transition: opacity 0.2s ease;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+/* cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 1rem 0 0 0;
+  padding: 0;
+}
+
+.card {
+	flex: 0 1 calc(25% - 1em);
+  margin: 1rem 0.5em;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--alt-bg-color);
+  animation: enter 0.25s ease-out;
+  -webkit-box-shadow: var(--box-shadow);
+  -moz-box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
+}
+
+@keyframes enter {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.card .image {
+  position: relative;
+}
+
+.card .image img {
+  width: 100%;
+  height: 100%;
+}
+
+.card .image .delete.button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  background-color: rgba(255,255,255,.75);
+  color: rgba(0,0,0,.85);
+}
+
+.card .content {
+  padding: 1rem 0.5rem;
+  flex: 1;
+  color: var(--alt-font-color-light);
+}
+
+.card .name {
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.card .donations {
+  font-style: italic;
+}
+
+.card .description {
+  margin-top: 0.5rem;
+}
+
+.card .donate.button {
+  background-color: var(--theme-primary);
+  color: var(--alt-font-color);
+  width: 100%;
+}
+
+.card .tags {
+  margin-top: 0.75rem;
+}
+
+.card .tags span {
+  color: #000;
+  background-color: rgb(198, 198, 198);
+  border-radius: 1em;
+  padding: 0.15em 0.8em;
+}
+
+.card .tags span.carnivore {
+  background-color: rgb(254, 130, 130);
+}
+
+.card .tags span.herbivore {
+  background-color: rgb(128, 247, 156);
+}
+
+.card .tags span.omnivore {
+  background-color: rgb(198, 133, 255);
+}
+
+@media (min-width: 400px) and (max-width: 699px) {
+  .card {
+    flex: 0 1 auto;
+    margin: 1em 0;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 899px) { 
+  .card {
+    flex: 0 1 calc(50% - 2em);
+    margin: 1em;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1200px) {
+  .card {
+    flex: 0 1 calc(33% - 2em);
+    margin: 1em;
+  }
+}
