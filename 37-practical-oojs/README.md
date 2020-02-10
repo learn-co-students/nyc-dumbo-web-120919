@@ -7,13 +7,10 @@
 - [ ] Create objects using `new` and constructor functions
 - [ ] Use the class syntax to to create objects
 
-### Inheritance
-
-- One Object gets access to the properties and methods of another object.
-
+### Notes
 
 ```rb
-class Animal 
+class Dog
 
   attr_accessor :name
 
@@ -21,15 +18,23 @@ class Animal
     @name = name
   end
 
-  def eat
-    puts "#{self.name} is nom noming"
+  def speak
+    "#{self.name} says woof"
+  end
+
+end
+
+class Animal 
+  def speak
+    "im talkin here"
   end
 end
-
-class Cat < Animal 
-end
-
 ```
+
+
+
+
+
 
 ### Object Creation in JavaScript
 
