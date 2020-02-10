@@ -1,0 +1,52 @@
+body {
+  font-family: 'Press Start 2P';
+  background: rgb(2,162,152);
+  background: linear-gradient(90deg, rgb(25, 216, 204) 0%, rgba(33,246,233,1) 100%);
+}
+
+main {
+  margin: 5vh auto;
+  padding: 2rem;
+  width: 80vw;
+  max-width: 70vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-shadow: 2px 2px 7px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 7px -1px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 7px -1px rgba(0,0,0,0.75);
+}
+
+#game {
+  padding: 0;
+  display: block;
+  margin: 0 auto;
+  background-color: lightgray;
+}
+
+#control-panel {
+  margin-top: 1em;
+}
+
+#control-panel button {
+  font-family: 'Press Start 2P';
+  font-size: 1rem;
+  border: 3px solid black;
+  padding: 0.5rem 1rem;
+  background-color: rgba(252, 124, 124, 0.75);
+  box-shadow: inset -3px -3px 0 0 rgb(252, 124, 124);
+  transition: all 0.1s ease-in;
+}
+
+#control-panel button:hover {
+  cursor: pointer;
+  background-color: rgba(255, 97, 97, 0.75);
+  box-shadow: inset -4px -4px 0 0 rgb(255, 97, 97);
+}
+
+#control-panel button:active {
+  outline: 1px thin black;
+  cursor: pointer;
+  background-color: rgba(255, 97, 97, 0.75);
+  box-shadow: inset 4px 4px 0 0 rgb(255, 97, 97);
+}
