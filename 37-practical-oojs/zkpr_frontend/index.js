@@ -1,3 +1,6 @@
+const adapter = new APIAdapter("http://localhost:3000")
+
+
 /****************  DOM Elements ****************/
 const lightSwitch = document.querySelector("#toggle-dark-mode")
 const animalForm = document.querySelector("#animal-form")
@@ -37,109 +40,40 @@ function handleFormSubmit(e) {
     donations: 0
   }
 
-  fetch("http://localhost:3000/animals", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Accept": "application/json"
-    },
-    body: JSON.stringify(newAnimal)
-  })
-    .then(r => {
-      if (r.ok) {
-        return r.json()
-      } else {
-        throw new Error("really nope")
-      }
-    })
-    .then(actualNewAnimal => {
-      // slap on the DOM
-      renderOneAnimal(actualNewAnimal)
-    })
-    .catch(error => {
-      alert(error)
+  adapter.createAnimal(newAnimal)
+    .then(animalObj => {
+      // create our animal
+      const newAnimal = new Animal(animalObj)
+      // slap it on the DOM
+      newAnimal.render(animalList)
     })
 
 }
 
 function handleDonate(e) {
   const outerLi = e.target.closest(".card")
-  const donationCount = outerLi.querySelector(".donation-count")
-  const newDonations = parseInt(donationCount.textContent) + 10
-  const animalId = outerLi.dataset.id
+  const animalId = parseInt(outerLi.dataset.id)
+  const animal = Animal.find(animalId)
 
-  fetch(`http://localhost:3000/animals/${animalId}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-      "Accept": "application/json"
-    },
-    body: JSON.stringify({
-      donations: newDonations
-    })
-  })
+  animal.donate()
 
-  // optimistic rendering: DOM manipulation outside of fetch
-  donationCount.textContent = newDonations
+  adapter.updateAnimal(animalId, animal.donations)
 }
 
 function handleDelete(e) {
   const outerLi = e.target.closest(".card")
-  const animalId = outerLi.dataset.id
-  fetch(`http://localhost:3000/animals/${animalId}`, {
-    method: "DELETE"
-  })
-    .then(r => r.json())
-    .then(data => {
-      // pessimistic rendering: DOM manipulation inside of fetch
-      outerLi.remove()
-    })
-}
+  const animalId = parseInt(outerLi.dataset.id)
+  const animal = Animal.find(animalId)
 
-/**************** Render Helpers ****************/
-function renderOneAnimal(animalObj) {
-  const outerLi = document.createElement('li')
-  outerLi.className = "card"
-  outerLi.dataset.id = animalObj.id
-
-  outerLi.innerHTML = `
-    <div class="image">
-      <img src="${animalObj.image_url}" alt="${animalObj.name}">
-      <button data-action="freeToTheWild" class="delete button">X</button>
-    </div>
-    <div class="content">
-      <div class="name">${animalObj.name}</div>
-      <div class="donations">
-        $<span class="donation-count">${animalObj.donations}</span> Donated
-      </div>
-      <div class="description">${animalObj.description}</div>
-      <div class="tags">
-        <span>${animalObj.species_name}</span>
-        <span class="${animalObj.diet}">${animalObj.diet}</span>
-      </div>
-    </div>
-    <button data-action="donate" class="donate button">
-      Donate $10
-    </button>
-  `
-
-  animalList.append(outerLi)
-}
-
-function renderAllAnimals(animals) {
-  animals.forEach(renderOneAnimal)
+  adapter.deleteAnimal(animalId)
+    .then(() => animal.delete())
 }
 
 /**************** Initial Render ****************/
-// renderAllAnimals(animalData)
-fetch("http://localhost:3000/animals")
-  .then(r => r.json())
-  .then(data => {
-    // once we're here, do DOM stuff
-    renderAllAnimals(data)
+adapter.getAnimals()
+  .then(animalsArray => {
+    animalsArray.forEach(animalObj => {
+      const newAnimal = new Animal(animalObj)
+      newAnimal.render(animalList)
+    })
   })
-
-
-// When X event happens
-// Do Y fetch
-// And slap Z on/off the DOM
