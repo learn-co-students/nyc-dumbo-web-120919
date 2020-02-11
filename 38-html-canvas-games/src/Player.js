@@ -6,13 +6,18 @@ class Player {
     this.image = new Image()
     this.image.src = "../assets/player.png"
 
+    this.jumpSound = new Audio("../assets/boing.m4a")
+
     this.deltaY = 0
     this.jumping = false
   }
 
   jump() {
-    this.jumping = true
-    this.deltaY = -20
+    if (!this.jumping) {
+      this.jumpSound.play()
+      this.jumping = true
+      this.deltaY = -20
+    }
   }
 
   draw() {
