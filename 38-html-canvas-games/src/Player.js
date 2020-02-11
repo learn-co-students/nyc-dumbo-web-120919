@@ -14,6 +14,10 @@ class Player {
 
   jump() {
     if (!this.jumping) {
+      // reset sound
+      this.jumpSound.pause()
+      this.jumpSound.currentTime = 0
+
       this.jumpSound.play()
       this.jumping = true
       this.deltaY = -20
@@ -32,7 +36,6 @@ class Player {
     if (this.jumping) {
       this.deltaY += 1
 
-      console.log(this.deltaY)
       if (this.coords.y + this.coords.height >= this.context.canvas.height) {
         this.jumping = false
         this.deltaY = 0

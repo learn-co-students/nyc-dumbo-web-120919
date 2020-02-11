@@ -1,6 +1,11 @@
 const canvas = document.querySelector("#game")
 const context = canvas.getContext("2d")
 
+const resetBtn = document.querySelector("#reset")
+resetBtn.addEventListener("click", e => {
+  e.target.blur()
+  reset()
+})
 
 function intersect(r1, r2) {
   return !(r2.x > r1.x + r1.width ||
@@ -42,7 +47,7 @@ function loop() {
   context.clearRect(0, 0, canvas.width, canvas.height)
 
   if (frames === nextBieb) {
-    nextBieb += 100
+    nextBieb += Math.floor(Math.random() * 100) + 50
     const obstacle = new Obstacle(context, {
       x: canvas.width - 80,
       y: canvas.height - 80,
@@ -79,11 +84,26 @@ function loop() {
   const obstaclesAfter = obstacles.length
   score += obstaclesBefore - obstaclesAfter
 
-  console.log(score)
   if (playing) {
     requestAnimationFrame(loop)
   }
 }
 
-playing = true
-loop()
+function reset() {
+  frames = 0
+  nextBieb = 100
+  obstacles = []
+  score = 0
+  start()
+}
+
+function start() {
+  playing = true
+  loop()
+}
+
+function stop() {
+  playing = false
+}
+
+start()
