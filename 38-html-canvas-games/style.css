@@ -17,11 +17,15 @@ main {
   box-shadow: 2px 2px 7px -1px rgba(0,0,0,0.75);
 }
 
+#board h1 {
+  text-align: center;
+}
+
 #game {
   padding: 0;
   display: block;
   margin: 0 auto;
-  background-color: lightgray;
+  background-color: rgb(45, 45, 45);
 }
 
 #control-panel {
