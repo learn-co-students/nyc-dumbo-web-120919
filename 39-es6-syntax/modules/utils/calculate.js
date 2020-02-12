@@ -1,6 +1,8 @@
 import { add, subtract, multiply, divide } from './math.js'
 
-const evaluate = equation => {
+let cantSeeMe = "only here"
+
+export const calc = equation => {
 
   const values = equation.split(" ")
 
@@ -22,4 +24,5 @@ const evaluate = equation => {
   }
 }
 
-export default evaluate
+// export default evaluate
+// export { calc }
