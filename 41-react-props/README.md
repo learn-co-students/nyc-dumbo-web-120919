@@ -26,3 +26,21 @@
 - [Babel](https://babeljs.io/)
 - [React](https://reactjs.org/)
 - [Whiteboarding App](https://awwapp.com)
+
+## Note
+
+0) `npm i -g create-react-app` (You only need to do this once.)
+
+1) `create-react-app name-of-project`
+2) `cd name-of-project`
+3) `npm install && npm start`
+4) Check `index.js`
+
+functional component
+  -> Return ONE JSX
+  You have access to props via the first argument
+
+class component
+  -> Needs to have a render function
+    -> Return ONE JSX
+  You have access to props via `this.props`
