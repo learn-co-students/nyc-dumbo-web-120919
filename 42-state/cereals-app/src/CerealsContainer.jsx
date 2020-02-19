@@ -2,7 +2,6 @@ import React from 'react'
 import Cereal from './Cereal'
 
 function CerealsContainer(props){
-
   return (
     <div>
       <h2>{props.title}</h2>
