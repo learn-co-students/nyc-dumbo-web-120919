@@ -15,10 +15,12 @@ class Cereal extends Component {
   }
 
   render(){
+    // console.log(this.props);
+    let {cerealName, personName} = this.props.cereal
     return(
       <div className="container">
         <img src="https://www.portablepress.com/wp-content/uploads/2014/04/CerealAndMilk_DS.jpg" alt="cereal and milk"></img>
-        <p><span>{ this.props.personName }</span> likes { this.props.cerealName }</p>
+        <p><span>{ personName }</span> likes { cerealName }</p>
         <button onClick={ this.handleLike }>{this.state.likes} Likes</button>
       </div>
 

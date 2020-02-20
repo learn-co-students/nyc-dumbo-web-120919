@@ -2,22 +2,15 @@ import React from 'react'
 import Cereal from './Cereal'
 
 function CerealsContainer(props){
+
+  let arrayOfCerealComponents = props.cereals.map((cerealObj) => {
+    return <Cereal key={cerealObj.id} cereal={cerealObj} />
+  })
+
   return (
     <div>
       <h2>{props.title}</h2>
-      <ul>
-        <Cereal cerealName="Lucky Charms"
-          personName="Eric"
-          bool={true}
-          arr={[1,2,3]}
-          func={() => {}}
-          obj={{hello: "120919"}}
-          num={1}/>
-        <Cereal cerealName="Apple Jacks" personName="Gracie" />
-        <Cereal cerealName="Chocos" personName="Mazen"/>
-        <Cereal cerealName="Flax Seed" personName="Michelle"/>
-        <Cereal />
-      </ul>
+      { arrayOfCerealComponents }
     </div>
   )
 
