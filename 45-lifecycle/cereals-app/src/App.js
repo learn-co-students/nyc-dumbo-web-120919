@@ -4,14 +4,43 @@ import CerealsContainer from './Components/CerealsContainer'
 import Form from './Components/Form'
 import Search from './Components/Search'
 
-
-import data from './data'
-
 class App extends React.Component{
 
   state = {
-    cereals: data
+    cereals: [],
+    searchTerm: ""
   }
+
+  componentDidMount(){
+    fetch("http://localhost:4000/cereals")
+      .then(r => r.json())
+      .then((arrOfCereals) => {
+        this.setState({
+          cereals: arrOfCereals
+        })
+      })
+  }
+
+  changeSearchTerm = (text) => {
+    // console.log("TEXT", text);
+    this.setState({
+      searchTerm: text
+    })
+  }
+
+  decideTheArrayBeingSentDown = () => {
+    let {cereals, searchTerm} = this.state
+
+    let filteredArray = cereals.filter(cereal => {
+      return cereal.cerealName.toLowerCase().includes(searchTerm.toLowerCase())
+        ||
+      cereal.personName.toLowerCase().includes(searchTerm.toLowerCase())
+    })
+
+    return filteredArray
+  }
+
+
 
   deleteOneCereal = (idFromChild) => {
     let filteredArray = this.state.cereals.filter(cereal => cereal.id !== idFromChild)
@@ -33,7 +62,6 @@ class App extends React.Component{
     })
   }
 
-
   addOneCereal = (infoComingFromChild) => {
     let newCerealWithId = {
       ...infoComingFromChild,
@@ -49,10 +77,13 @@ class App extends React.Component{
     return (
       <div className="App">
         <h1>Cereals Application</h1>
-        <Search />
+        <Search
+          searchTerm={this.state.searchTerm}
+          changeSearchTerm={this.changeSearchTerm}
+        />
         <CerealsContainer
           title="Cereals Container"
-          cereals={this.state.cereals}
+          cereals={this.decideTheArrayBeingSentDown()}
           deleteOneCereal={this.deleteOneCereal}
           updateOneCereal={this.updateOneCereal}
         />
