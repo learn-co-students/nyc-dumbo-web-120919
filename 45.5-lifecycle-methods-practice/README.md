@@ -62,7 +62,7 @@ This lecture is meant as a space for exploring the superpowers of React componen
 * [Lifecycle methods graph](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 * [Generating random color](https://dev.to/akhil_001/generating-random-color-with-single-line-of-js-code-fhj)
 * [What is binding functions?](https://www.freecodecamp.org/news/this-is-why-we-need-to-bind-event-handlers-in-class-components-in-react-f7ea1a6f93eb/)
-* [Lecture video - to be added](https://youtu.be/lvIAWB2krKY)
+* [Lecture video](https://youtu.be/lvIAWB2krKY)
 
 ---
 
