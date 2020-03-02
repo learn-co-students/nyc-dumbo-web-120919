@@ -7,6 +7,16 @@ class UsersController < ApplicationController
     render json: @user
   end
 
+  def history
+    @user = User.find_by(username: params[:thisIsTheUserName])
+    if @user
+      render json: {count: @user.orders.count}
+    else
+      render json: {count: -2}
+    end
+  end
+
+
   def persist
     wristband = encode_token({user_id: @user.id})
     render json: { user: UserSerializer.new(@user), token: wristband }

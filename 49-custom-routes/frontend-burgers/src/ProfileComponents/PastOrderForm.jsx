@@ -15,6 +15,25 @@ class PastOrderForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+
+    fetch("http://localhost:4000/users/history", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        thisIsTheUserName: this.state.username
+      })
+    })
+      .then(r => r.json())
+      .then(resp => {
+        this.setState({
+          count: resp.count
+        })
+      })
+
+
+
   }
 
   renderText = () => {

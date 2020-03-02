@@ -7,6 +7,30 @@ const OrderContainer = (props) => {
     return acc + burger.price
   }, 0)
 
+
+  const handleClick = (e) => {
+    let burger_ids = props.burgers.map(burger => burger.id)
+    console.log(burger_ids);
+    console.log(props.token);
+
+    fetch("http://localhost:4000/orders", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "Authorization": `bearer ${props.token}`
+      },
+      body: JSON.stringify({
+        burger_ids: burger_ids
+      })
+    })
+      .then(r => r.json())
+      .then((newOrder) => {
+        props.addOneOrder(newOrder)
+      })
+
+  }
+
+
   return (
     <div className="order">
       <h2>Your Orders</h2>
@@ -15,7 +39,7 @@ const OrderContainer = (props) => {
       </ul>
 
       <h3>Total Price: $<span id="total">{totalSum}</span></h3>
-      <button className="submit">Place an Order </button>
+      <button onClick={handleClick} className="submit">Place an Order </button>
     </div>
   )
 }

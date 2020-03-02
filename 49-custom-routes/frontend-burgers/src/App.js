@@ -37,6 +37,18 @@ class App extends React.Component {
       })
   }
 
+
+  addOneOrder = (newOrder) => {
+    let copyOfUser = {
+      ...this.state.user,
+      orders: [...this.state.user.orders, newOrder]
+    }
+
+    this.setState({
+      user: copyOfUser
+    })
+  }
+
   handleResp = (resp) => {
    if (resp.user) {
      localStorage.token = resp.token
@@ -89,7 +101,7 @@ class App extends React.Component {
           <Route path="/login" render={ this.renderForm } />
           <Route path="/register" render={ this.renderForm }/>
           <Route path="/burgers">
-            <BurgerContainer burgers={this.state.burgers} user={this.state.user} token={this.state.token}/>
+            <BurgerContainer burgers={this.state.burgers} user={this.state.user} token={this.state.token} addOneOrder={this.addOneOrder}/>
           </Route>
         </Switch>
       </div>

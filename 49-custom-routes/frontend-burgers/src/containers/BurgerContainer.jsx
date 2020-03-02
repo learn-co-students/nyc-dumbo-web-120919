@@ -31,7 +31,7 @@ class BurgerContainer extends React.Component {
           <h1 id="heading">Welcome to Good Burger, {this.props.user.username}</h1>
         </div>
 
-        <OrderContainer burgers={this.state.burgers} />
+        <OrderContainer burgers={this.state.burgers} token={this.props.token} addOneOrder={this.props.addOneOrder}/>
         <MenuContainer burgers={this.props.burgers} addBurgerToOrder={this.addBurgerToOrder}/>
         <PastOrdersContainer orders={this.props.user.orders}/>
       </div>
