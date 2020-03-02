@@ -8,7 +8,9 @@ class MenuContainer extends Component {
       <div className="menu">
         <h2>Good Burger Menu</h2>
         <div id="burger-menu">
-          
+          {
+            this.props.burgers.map(burgerObj => <Burger key={burgerObj.id} burger={burgerObj} addBurgerToOrder={this.props.addBurgerToOrder}/>)
+          }
         </div>
       </div>
 

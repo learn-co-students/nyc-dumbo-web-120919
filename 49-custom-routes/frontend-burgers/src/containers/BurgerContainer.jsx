@@ -3,17 +3,34 @@ import OrderContainer from './OrderContainer'
 import MenuContainer from './MenuContainer'
 import PastOrdersContainer from './PastOrdersContainer'
 
-const BurgerContainer = () => {
-  return(
-    <div className="container">
-      <div className="header">
-        <h1 id="heading">Welcome to Good Burger</h1>
+class BurgerContainer extends React.Component {
+
+  state={
+    orders: []
+  }
+
+  addBurgerToOrder = (burgerObj) => {
+    const newBurgers = [...this.state.orders, burgerObj]
+    this.setState({
+      orders: newBurgers
+    })
+  }
+
+  render(){
+    return(
+      <div className="container">
+        
+        <div className="header">
+          <h1 id="heading">Welcome to Good Burger, {this.props.user.username}</h1>
+        </div>
+
+        <OrderContainer orders={this.state.orders}/>
+        <MenuContainer burgers={this.props.burgers} addBurgerToOrder={this.addBurgerToOrder}/>
+        <PastOrdersContainer/>
       </div>
-      <OrderContainer/>
-      <MenuContainer/>
-      <PastOrdersContainer/>
-    </div>
-  )
+    )
+  }
+
 }
 
 export default BurgerContainer;

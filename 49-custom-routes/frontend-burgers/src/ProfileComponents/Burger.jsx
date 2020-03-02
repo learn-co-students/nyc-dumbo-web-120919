@@ -1,14 +1,20 @@
 import React from 'react';
 
-const Burger = () => {
+const Burger = (props) => {
+  let {burger} = props
+
+  const handleClick = (e) => {
+    props.addBurgerToOrder(burger)
+  }
+
   return (
     <div className="burger">
-      <h3 className="burger_title">Good Burger</h3>
-        <img src="https://www.lovelesscafe.com/uploads/recipeimages/BBQBaconBurger-web.jpg" alt="Good Burger"/>
+      <h3 className="burger_title">{burger.name}</h3>
+        <img src={burger.image} alt={burger.name}/>
         <p className="burger_description">
-          What a Good Burger!
+          {burger.description}
         </p>
-        <button className="button">Add to Order</button>
+        <button className="button" onClick={handleClick}>Add to Order</button>
     </div>
 
   )

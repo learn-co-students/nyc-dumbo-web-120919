@@ -11,9 +11,10 @@ class App extends React.Component {
   state = {
     user: {
       username: "",
-      orders: []
+      past_orders: []
     },
-    token: ""
+    token: "",
+    burgers: []
   }
 
   componentDidMount() {
@@ -26,13 +27,21 @@ class App extends React.Component {
        .then(r => r.json())
        .then(this.handleResp)
     }
+
+    fetch("http://localhost:4000/burgers")
+      .then(r => r.json())
+      .then(burgers => {
+        this.setState({
+          burgers: burgers
+        })
+      })
   }
 
   handleResp = (resp) => {
    if (resp.user) {
      localStorage.token = resp.token
      this.setState(resp, () => {
-       this.props.history.push("/profile")
+       this.props.history.push("/burgers")
      })
    }
    else {
@@ -79,7 +88,9 @@ class App extends React.Component {
         <Switch>
           <Route path="/login" render={ this.renderForm } />
           <Route path="/register" render={ this.renderForm }/>
-          <Route path="/burgers" component={ BurgerContainer } />
+          <Route path="/burgers">
+            <BurgerContainer burgers={this.state.burgers} user={this.state.user}/>
+          </Route>
         </Switch>
       </div>
     )

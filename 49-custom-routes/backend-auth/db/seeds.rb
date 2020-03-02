@@ -4,7 +4,7 @@ mazen = User.create(username: "Mazen", password: "123")
 burgers = [
     { name: "Good Burger",
       description: "What a Good Burger!",
-      image: "https://www.lovelesscafe.com/uploads/recipeimages/BBQBaconBurger-web.jpg",
+      image: "https://assets.epicurious.com/photos/57c5c6d9cf9e9ad43de2d96e/master/pass/the-ultimate-hamburger.jpg",
       price: rand(100)
     },
     { name: "Sal's Burger",

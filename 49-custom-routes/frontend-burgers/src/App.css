@@ -223,3 +223,7 @@ input[type=submit].submit , .submit {
   border-radius: 4px;
   cursor: pointer;
 }
+
+#order-list {
+  padding: 0;
+}

@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Order = () =>{
+const Order = (props) =>{
   return (
     <div className="card">
-      <h4>TimeStamp</h4>
-      <p>$23.32</p>
+      <h4>{props.order.timeStamp}</h4>
+      <p>{props.price}</p>
       <button className="deleteButton">x</button>
     </div>
   )
