@@ -60,3 +60,22 @@ burgers = [
   ]
 
 Burger.create(burgers)
+
+maz_order = Order.create(user: mazen)
+
+maz_order.burgers << Burger.third
+maz_order.burgers << Burger.fourth
+maz_order.burgers << Burger.fifth
+
+maz_order2 = Order.create(user: mazen)
+
+maz_order2.burgers << Burger.all.sample
+maz_order2.burgers << Burger.all.sample
+maz_order2.burgers << Burger.all.sample
+maz_order2.burgers << Burger.all.sample
+
+eric_order = Order.create(user: eric)
+
+eric_order.burgers << Burger.all.sample
+eric_order.burgers << Burger.all.sample
+eric_order.burgers << Burger.all.sample

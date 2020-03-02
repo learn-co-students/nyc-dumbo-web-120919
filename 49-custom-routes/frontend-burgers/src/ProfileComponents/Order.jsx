@@ -1,13 +1,40 @@
 import React from 'react';
+import SingularBurger from './SingularBurger'
 
-const Order = (props) =>{
-  return (
-    <div className="card">
-      <h4>{props.order.timeStamp}</h4>
-      <p>{props.price}</p>
-      <button className="deleteButton">x</button>
-    </div>
-  )
+
+class Order extends React.Component{
+
+  state={
+    clicked: false
+  }
+
+  handleClick = (e) => {
+    this.setState({
+      clicked: !this.state.clicked
+    })
+  }
+
+  render(){
+    return (
+      <div className="card" onClick={this.handleClick}>
+        <h4>{this.props.order.created_at}</h4>
+        <p>{this.props.price}</p>
+
+        {
+          this.state.clicked
+            ?
+          <ul className="burgersList">
+            {}
+          </ul>
+            :
+          null
+        }
+
+        <button className="deleteButton">x</button>
+      </div>
+    )
+  }
 }
+
 
 export default Order;

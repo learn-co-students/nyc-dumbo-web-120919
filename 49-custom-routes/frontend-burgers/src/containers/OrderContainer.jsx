@@ -1,16 +1,17 @@
 import React from 'react';
+import SingularBurger from '../ProfileComponents/SingularBurger'
 
-const OrderContainer = ({orders}) => {
-  
-  let totalSum = orders.reduce((acc, order) => {
-    return acc + order.price
+const OrderContainer = (props) => {
+  let {burgers} = props
+  let totalSum = burgers.reduce((acc, burger) => {
+    return acc + burger.price
   }, 0)
 
   return (
     <div className="order">
       <h2>Your Orders</h2>
       <ul id="order-list">
-        {orders.map((order, index) => <li key={index}>{order.name}</li>)}
+        {burgers.map((burger, index) => <SingularBurger key={index} burger={burger}/>)}
       </ul>
 
       <h3>Total Price: $<span id="total">{totalSum}</span></h3>

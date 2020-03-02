@@ -9,7 +9,7 @@ const Burger = (props) => {
 
   return (
     <div className="burger">
-      <h3 className="burger_title">{burger.name}</h3>
+      <h3 className="burger_title">{burger.name} - ${burger.price}</h3>
         <img src={burger.image} alt={burger.name}/>
         <p className="burger_description">
           {burger.description}

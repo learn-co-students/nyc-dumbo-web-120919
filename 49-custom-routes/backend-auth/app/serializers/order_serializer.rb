@@ -1,3 +1,5 @@
 class OrderSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :created_at
+  has_many :burgers
+
 end

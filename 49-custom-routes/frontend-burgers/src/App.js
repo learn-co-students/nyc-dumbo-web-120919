@@ -11,7 +11,7 @@ class App extends React.Component {
   state = {
     user: {
       username: "",
-      past_orders: []
+      orders: []
     },
     token: "",
     burgers: []
@@ -89,7 +89,7 @@ class App extends React.Component {
           <Route path="/login" render={ this.renderForm } />
           <Route path="/register" render={ this.renderForm }/>
           <Route path="/burgers">
-            <BurgerContainer burgers={this.state.burgers} user={this.state.user}/>
+            <BurgerContainer burgers={this.state.burgers} user={this.state.user} token={this.state.token}/>
           </Route>
         </Switch>
       </div>

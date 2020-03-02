@@ -17,6 +17,16 @@ class PastOrderForm extends Component {
     e.preventDefault()
   }
 
+  renderText = () => {
+    if (this.state.count === -1) {
+      return ""
+    } else if (this.state.count === -2) {
+      return "No user found."
+    } else {
+      return `Has ${this.state.count} number of orders!`
+    }
+  }
+
   render() {
     return (
       <div>
@@ -25,7 +35,7 @@ class PastOrderForm extends Component {
           <input type="text" name="username" id="username" autoComplete="off" value={this.state.username} onChange={this.handleChange}/>
           <input type="submit" value="Find Past Order" className="submit"/>
         </form>
-        <p>{this.state.count === -1 ? null : `${this.state.count} Orders` }</p>
+        <p>{this.renderText()}</p>
       </div>
     );
   }

@@ -227,3 +227,7 @@ input[type=submit].submit , .submit {
 #order-list {
   padding: 0;
 }
+
+.burgersList {
+  padding: 0;
+}

@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
   before_action :authorized, only: [:persist]
 
+  def show
+    # YOUR PROJECTS SHOULD NOT INCLUDE A SHOW ACTION
+    @user = User.find(params[:id])
+    render json: @user
+  end
+
   def persist
     wristband = encode_token({user_id: @user.id})
     render json: { user: UserSerializer.new(@user), token: wristband }
